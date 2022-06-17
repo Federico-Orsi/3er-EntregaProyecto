@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(249, 243, 233);
+
+      /* */
+    
+    
+}
+
+.logo{
+    height: 50px;
+}
+
+.bg-white{
+    background-color: #fff;
+}
+
+.footerInfo{
+    background-color: $bg-color-footer;
+    color: $color-footer;
+    font-family:'quicksand', sans-serif;
+    font-size:small;
+    
+}
+
+.visibility{
+  visibility: hidden;
+  display: none;
+}
+
+
+
+
+@media (min-width:768px){
+    
+    .carrousel{
+        height: 100%;
+        width: 30%;
+    }
+  
+    .visibility{
+        visibility:visible;
+        display: unset;
+      }
+
+      .footerInfo{
+        
+        font-size:small;
+        
+    }
+
+}

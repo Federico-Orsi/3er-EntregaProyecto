@@ -1,0 +1,18 @@
+.img-fondo{
+    background-image: url(../img/office\ notebook.jpg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw;
+    
+}
+
+.div-height{
+    height: 100px;
+}
+
+
+.mediaIcon:hover{
+    transform: scale(125%);
+    transition: all 1s;
+    }

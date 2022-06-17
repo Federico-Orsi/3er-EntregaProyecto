@@ -1,0 +1,52 @@
+#imgNosotros{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    gap: 2%;
+}
+
+.imgIcons{
+height: 50px;
+width: 50px;
+}
+
+.iconDiv{
+    margin-left: 5%;
+}
+
+
+.figcaption{
+    margin-left: 8%;
+}
+
+
+#containerNosotros{
+align-self: center;
+     } 
+
+#imgTablet{
+    width: 100%;
+}
+
+.h1Nosotros{
+    text-align: center;
+}
+
+.h3Titulo{
+    background-color: rgb(117, 106, 106);
+    color: #fff;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+@media (min-width:768px){
+
+    #imgNosotros{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #imgTablet{
+        width: 50%;
+    }
+}

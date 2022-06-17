@@ -1,0 +1,70 @@
+.servicios{
+    background-color: rgb(201, 188, 165);
+    height: 380px;
+    width: 300px;
+    border-radius: 5px;
+    color:$cardsContabilidad;
+    text-align: center;
+    margin: 5px;
+    padding-top: 15px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.servicios p{
+    margin-block-start: 16px;
+    margin-block-end: 1em ;
+}
+
+#servicios{
+    display: flex;
+    flex-direction: column ;
+    justify-content:center;
+    margin-top: 160px;
+    margin-bottom: 70px;
+    align-items: center;
+
+}    
+
+
+
+@media (min-width:768px){
+
+    #servicios{
+        display: flex;
+        flex-direction: row ;
+        justify-content:center;
+        margin-top: 160px;
+        margin-bottom: 70px;
+    
+    }    
+    
+    .servicios:hover{
+        transform: scale(110%);
+        transition: all 1s;
+    }
+
+    
+     
+     
+    
+    
+    .servicios{
+        margin: 3px;
+    }
+    
+    .separador{
+        margin-top: -13px;
+        }
+        
+        .primerP{
+            margin-top: 19px;
+        }
+        
+        .paddingP{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+     
+}

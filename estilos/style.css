@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(249, 243, 233);
+  /* */
+}
+
+.logo {
+  height: 50px;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.footerInfo {
+  background-color: black;
+  color: yellow;
+  font-family: "quicksand", sans-serif;
+  font-size: small;
+}
+
+.visibility {
+  visibility: hidden;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .carrousel {
+    height: 100%;
+    width: 30%;
+  }
+
+  .visibility {
+    visibility: visible;
+    display: unset;
+  }
+
+  .footerInfo {
+    font-size: small;
+  }
+}
+.servicios {
+  background-color: rgb(201, 188, 165);
+  height: 380px;
+  width: 300px;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  margin: 5px;
+  padding-top: 15px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.servicios p {
+  -webkit-margin-before: 16px;
+          margin-block-start: 16px;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+
+#servicios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 160px;
+  margin-bottom: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 768px) {
+  #servicios {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 160px;
+    margin-bottom: 70px;
+  }
+
+  .servicios:hover {
+    -webkit-transform: scale(110%);
+            transform: scale(110%);
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+
+  .servicios {
+    margin: 3px;
+  }
+
+  .separador {
+    margin-top: -13px;
+  }
+
+  .primerP {
+    margin-top: 19px;
+  }
+
+  .paddingP {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.ubicacion {
+  text-align: left;
+  margin-right: 125px;
+  color: red;
+}
+
+.carrousel {
+  height: 100%;
+  width: 80%;
+}
+
+.img-carrousel {
+  height: 400px;
+}
+
+.corouselSection {
+  margin-right: 18%;
+  margin-left: 18%;
+}
+
+.img-fondo {
+  background-image: url(../img/office\ notebook.jpg);
+  height: 400px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100vw;
+}
+
+.div-height {
+  height: 100px;
+}
+
+.mediaIcon:hover {
+  -webkit-transform: scale(125%);
+          transform: scale(125%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#imgNosotros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 5%;
+  gap: 2%;
+}
+
+.imgIcons {
+  height: 50px;
+  width: 50px;
+}
+
+.iconDiv {
+  margin-left: 5%;
+}
+
+.figcaption {
+  margin-left: 8%;
+}
+
+#containerNosotros {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+#imgTablet {
+  width: 100%;
+}
+
+.h1Nosotros {
+  text-align: center;
+}
+
+.h3Titulo {
+  background-color: rgb(117, 106, 106);
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+}
+
+@media (min-width: 768px) {
+  #imgNosotros {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  #imgTablet {
+    width: 50%;
+  }
+}/*# sourceMappingURL=style.css.map */
