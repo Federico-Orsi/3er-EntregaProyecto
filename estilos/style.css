@@ -7,7 +7,6 @@ body {
   width: 100%;
   height: 100vh;
   background-color: rgb(249, 243, 233);
-  /* */
 }
 
 .logo {
@@ -20,9 +19,18 @@ body {
 
 .footerInfo {
   background-color: black;
-  color: yellow;
+  color: #fff;
   font-family: "quicksand", sans-serif;
   font-size: small;
+}
+
+.whatsappFooter {
+  margin-top: 85%;
+}
+
+.whatsappFooter:hover {
+  transform: scale(125%);
+  transition: all 1s;
 }
 
 .visibility {
@@ -44,13 +52,18 @@ body {
   .footerInfo {
     font-size: small;
   }
+
+  .ocultarEnTablet {
+    visibility: hidden;
+    display: none;
+  }
 }
 .servicios {
   background-color: rgb(201, 188, 165);
   height: 380px;
   width: 300px;
   border-radius: 5px;
-  color: black;
+  color: #fff;
   text-align: center;
   margin: 5px;
   padding-top: 15px;
@@ -65,43 +78,25 @@ body {
 }
 
 #servicios {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 160px;
   margin-bottom: 70px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   #servicios {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 160px;
     margin-bottom: 70px;
   }
 
   .servicios:hover {
-    -webkit-transform: scale(110%);
-            transform: scale(110%);
-    -webkit-transition: all 1s;
+    transform: scale(110%);
     transition: all 1s;
   }
 
@@ -142,6 +137,13 @@ body {
   margin-left: 18%;
 }
 
+.prueba {
+  color: blueviolet;
+}
+.pruebahover {
+  color: red;
+}
+
 .img-fondo {
   background-image: url(../img/office\ notebook.jpg);
   height: 400px;
@@ -155,20 +157,13 @@ body {
 }
 
 .mediaIcon:hover {
-  -webkit-transform: scale(125%);
-          transform: scale(125%);
-  -webkit-transition: all 1s;
+  transform: scale(125%);
   transition: all 1s;
 }
 
 #imgNosotros {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-top: 5%;
   gap: 2%;
 }
@@ -187,8 +182,7 @@ body {
 }
 
 #containerNosotros {
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 #imgTablet {
@@ -207,13 +201,8 @@ body {
 
 @media (min-width: 768px) {
   #imgNosotros {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
 
   #imgTablet {

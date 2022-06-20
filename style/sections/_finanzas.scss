@@ -12,3 +12,10 @@
     margin-right: 18%;
     margin-left: 18%;
 }
+
+.prueba{
+    color:blueviolet;
+    &hover{
+        color: red
+    }
+}
