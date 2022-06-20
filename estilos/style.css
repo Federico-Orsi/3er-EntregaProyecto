@@ -70,6 +70,11 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+.servicios:hover {
+  transform: scale(110%);
+  transition: all 1s;
+}
+
 .servicios p {
   -webkit-margin-before: 16px;
           margin-block-start: 16px;
@@ -93,11 +98,6 @@ body {
     justify-content: center;
     margin-top: 160px;
     margin-bottom: 70px;
-  }
-
-  .servicios:hover {
-    transform: scale(110%);
-    transition: all 1s;
   }
 
   .servicios {

@@ -11,6 +11,12 @@
 
 }
 
+.servicios:hover{
+    transform: scale(110%);
+    transition: all 1s;
+}
+
+
 .servicios p{
     margin-block-start: 16px;
     margin-block-end: 1em ;
@@ -38,15 +44,6 @@
         margin-bottom: 70px;
     
     }    
-    
-    .servicios:hover{
-        transform: scale(110%);
-        transition: all 1s;
-    }
-
-    
-     
-     
     
     
     .servicios{
