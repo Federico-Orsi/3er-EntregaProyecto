@@ -1,0 +1,19 @@
+
+
+$list: (
+     A: rgb(144, 83, 83),
+     B: rgb(222, 242, 92),
+     C: rgb(157, 69, 239),
+);
+
+@each $letter, $color in $list {
+    .map-#{$letter}{
+        background-color: $color;
+    }
+    
+}
+
+
+
+
+

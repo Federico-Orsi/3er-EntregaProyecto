@@ -1,0 +1,25 @@
+
+
+
+@mixin orangeHover { 
+    
+    &:hover{
+        color: $colorIndexHover;
+    }
+    
+}
+
+@mixin FooterTitleColor { 
+    
+    &:hover{
+        color: $FooterTitleColor;
+    }
+    
+}
+
+
+
+
+
+
+
