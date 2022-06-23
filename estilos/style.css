@@ -24,6 +24,10 @@ body {
   font-size: small;
 }
 
+.changeColor:hover {
+  color: yellow;
+}
+
 .whatsappFooter {
   margin-top: 85%;
 }
@@ -58,7 +62,7 @@ body {
     display: none;
   }
 }
-.servicios {
+.servicios, .serviciosExtend {
   background-color: rgb(201, 188, 165);
   height: 380px;
   width: 300px;
@@ -70,12 +74,19 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
-.servicios:hover {
+.servicios:hover, .serviciosExtend:hover {
   transform: scale(110%);
   transition: all 1s;
 }
 
-.servicios p {
+.serviciosExtend {
+  color: black;
+}
+.serviciosExtend:hover {
+  background-color: rgb(188, 181, 181);
+}
+
+.servicios p, .serviciosExtend p {
   -webkit-margin-before: 16px;
           margin-block-start: 16px;
   -webkit-margin-after: 1em;
@@ -100,7 +111,7 @@ body {
     margin-bottom: 70px;
   }
 
-  .servicios {
+  .servicios, .serviciosExtend {
     margin: 3px;
   }
 
@@ -140,7 +151,7 @@ body {
 .prueba {
   color: blueviolet;
 }
-.pruebahover {
+.prueba:hover {
   color: red;
 }
 
@@ -159,6 +170,9 @@ body {
 .mediaIcon:hover {
   transform: scale(125%);
   transition: all 1s;
+}
+.mediaIcon:hover:hover {
+  color: rgb(227, 162, 65);
 }
 
 #imgNosotros {
@@ -208,4 +222,15 @@ body {
   #imgTablet {
     width: 50%;
   }
+}
+.map-A {
+  background-color: rgb(144, 83, 83);
+}
+
+.map-B {
+  background-color: rgb(222, 242, 92);
+}
+
+.map-C {
+  background-color: rgb(157, 69, 239);
 }/*# sourceMappingURL=style.css.map */

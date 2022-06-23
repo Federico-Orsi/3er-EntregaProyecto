@@ -16,6 +16,14 @@
     transition: all 1s;
 }
 
+.serviciosExtend{
+    @extend .servicios;
+    color: black;
+    &:hover{
+        background-color: rgb(188, 181, 181);
+    }
+
+}
 
 .servicios p{
     margin-block-start: 16px;

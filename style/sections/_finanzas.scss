@@ -15,7 +15,7 @@
 
 .prueba{
     color:blueviolet;
-    &hover{
-        color: red
+    &:hover{
+        color: red;
     }
 }
