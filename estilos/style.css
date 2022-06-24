@@ -79,9 +79,6 @@ body {
   transition: all 1s;
 }
 
-.serviciosExtend {
-  color: black;
-}
 .serviciosExtend:hover {
   background-color: rgb(188, 181, 181);
 }
@@ -222,15 +219,4 @@ body {
   #imgTablet {
     width: 50%;
   }
-}
-.map-A {
-  background-color: rgb(144, 83, 83);
-}
-
-.map-B {
-  background-color: rgb(222, 242, 92);
-}
-
-.map-C {
-  background-color: rgb(157, 69, 239);
 }/*# sourceMappingURL=style.css.map */
