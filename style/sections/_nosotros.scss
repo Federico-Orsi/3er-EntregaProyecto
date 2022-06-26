@@ -38,6 +38,14 @@ align-self: center;
     font-family:'Times New Roman', Times, serif;
 }
 
+.pNosotros{
+     display: none;
+ }
+
+ .displayServicios{
+    display: flex;
+    flex-direction: column;
+ }
 
 @media (min-width:768px){
 
@@ -49,4 +57,17 @@ align-self: center;
     #imgTablet{
         width: 50%;
     }
+
+    .pNosotros{
+         display:unset;
+     }
+
+    .pNosotros-1{
+        display: none;
+    }
+
+    .displayServicios{
+        display: flex;
+        flex-direction: row;
+     }
 }

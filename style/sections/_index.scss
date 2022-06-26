@@ -2,12 +2,17 @@
 
 .img-fondo{
     background-image: url(../img/office\ notebook.jpg);
-    height: 400px;
+    height: 177px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw;
     
 }
+
+.tituloIndex{
+    margin-top: 1%;
+    text-align: center;
+    }
 
 .div-height{
     height: 100px;
@@ -17,7 +22,31 @@
 .mediaIcon:hover{
     transform: scale(125%);
     transition: all 1s;
+    cursor: pointer;
     
     @include orangeHover ();
 
   }
+
+
+  @media (min-width:768px){
+
+    .img-fondo{
+        background-image: url(../img/office\ notebook.jpg);
+        height: 400px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100vw;
+        
+    }
+
+  .tituloIndex{
+  margin-top: 1%;
+  margin-left: 24%;
+  text-align: unset;
+  }
+
+
+  }
+
+

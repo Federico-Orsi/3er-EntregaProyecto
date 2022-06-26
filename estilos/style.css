@@ -26,6 +26,7 @@ body {
 
 .changeColor:hover {
   color: yellow;
+  cursor: pointer;
 }
 
 .whatsappFooter {
@@ -35,6 +36,26 @@ body {
 .whatsappFooter:hover {
   transform: scale(125%);
   transition: all 1s;
+}
+
+.after {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.after:hover {
+  cursor: pointer;
+}
+.after:hover:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: yellow;
+  bottom: 0;
+  left: 0;
 }
 
 .visibility {
@@ -145,19 +166,17 @@ body {
   margin-left: 18%;
 }
 
-.prueba {
-  color: blueviolet;
-}
-.prueba:hover {
-  color: red;
-}
-
 .img-fondo {
   background-image: url(../img/office\ notebook.jpg);
-  height: 400px;
+  height: 177px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100vw;
+}
+
+.tituloIndex {
+  margin-top: 1%;
+  text-align: center;
 }
 
 .div-height {
@@ -167,11 +186,27 @@ body {
 .mediaIcon:hover {
   transform: scale(125%);
   transition: all 1s;
+  cursor: pointer;
 }
 .mediaIcon:hover:hover {
   color: rgb(227, 162, 65);
 }
 
+@media (min-width: 768px) {
+  .img-fondo {
+    background-image: url(../img/office\ notebook.jpg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw;
+  }
+
+  .tituloIndex {
+    margin-top: 1%;
+    margin-left: 24%;
+    text-align: unset;
+  }
+}
 #imgNosotros {
   display: flex;
   flex-direction: column;
@@ -210,6 +245,15 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+.pNosotros {
+  display: none;
+}
+
+.displayServicios {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 768px) {
   #imgNosotros {
     display: flex;
@@ -218,5 +262,18 @@ body {
 
   #imgTablet {
     width: 50%;
+  }
+
+  .pNosotros {
+    display: unset;
+  }
+
+  .pNosotros-1 {
+    display: none;
+  }
+
+  .displayServicios {
+    display: flex;
+    flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */
