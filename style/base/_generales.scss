@@ -21,8 +21,9 @@ body{
     height: 50px;
 }
 
-.bg-white{
-    background-color: #fff;
+.changeBs{
+    background-color: $navbarColor;
+    font-family:'Times New Roman', Times, serif;
 }
 
 .h3Titulo{

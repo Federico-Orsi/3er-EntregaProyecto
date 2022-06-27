@@ -6,14 +6,16 @@
 }
 
 .img-carrousel{
-    height: 400px;
+    height: 280px;
     
 }
 
-.corouselSection{
+ .corouselSection{
     margin-right: 18%;
     margin-left: 18%;
 }
+
+
 
 .grids{
     display: flex;
@@ -24,9 +26,10 @@
     background-color: rgba(149, 150, 156, 0.457);
     
     border-radius: 19px;
-    width: 82%;
+    width: 54%;
     text-align: center;
     color: #fff;
+    margin-left: 22%;
     
     &:hover{
         
@@ -49,15 +52,50 @@
 }
 .videoCripto{
     margin-left: 8%;
+    width: 80%;
 }
+
+.paddingMobile{
+margin-right: 2%;
+margin-left: 2%;
+text-align: center
+}
+
+@media (min-width:768px){
+    .paddingMobile{
+        margin-right: 5%;
+        margin-left: 0%;
+        text-align: center;
+        }
+
+        .subtituloCripto{
+    
+            margin-left: 38%;
+            width: 23%;
+           }
+
+      .divSubtitulo{
+        text-align: center;
+      }
+}
+
+
 
 @media (min-width:1024px){
 
-.grids{
+    .img-carrousel{
+        height: 400px;
+        
+    }
+    
+  
+    .grids{
     display: grid;
     justify-content: space-around;
+    margin-top: 4%;
     grid-template-areas: 
     "cripto video wallet";
+
 }
 
 .cripto{
@@ -73,8 +111,27 @@
 }
 
 
+.videoCripto{
+    margin-left: 0%;
+    width: 100%;
+}
 
+.videoFinanzas{
+    margin-left: 3%;
+    margin-right: 3%;
+}
 
+.paddingMobile{
+    margin-right: 5%;
+    margin-left: 2%;
+    text-align: center;
+    }
+
+.subtituloCripto{
+    
+    margin-left: 23%;
+    width: 50%;
+   }
 
 
 }

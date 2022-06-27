@@ -14,8 +14,9 @@ body {
   height: 50px;
 }
 
-.bg-white {
+.changeBs {
   background-color: #fff;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .h3Titulo {
@@ -90,7 +91,7 @@ body {
     display: none;
   }
 }
-.servicios, .serviciosExtend {
+.servicios {
   background-color: rgb(201, 188, 165);
   height: 380px;
   width: 300px;
@@ -102,16 +103,12 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
-.servicios:hover, .serviciosExtend:hover {
+.servicios:hover {
   transform: scale(110%);
   transition: all 1s;
 }
 
-.serviciosExtend:hover {
-  background-color: rgb(188, 181, 181);
-}
-
-.servicios p, .serviciosExtend p {
+.servicios p {
   -webkit-margin-before: 16px;
           margin-block-start: 16px;
   -webkit-margin-after: 1em;
@@ -136,7 +133,7 @@ body {
     margin-bottom: 70px;
   }
 
-  .servicios, .serviciosExtend {
+  .servicios {
     margin: 3px;
   }
 
@@ -165,7 +162,7 @@ body {
 }
 
 .img-carrousel {
-  height: 400px;
+  height: 280px;
 }
 
 .corouselSection {
@@ -181,9 +178,10 @@ body {
 .subtituloCripto, .subtituloContabilidad {
   background-color: rgba(149, 150, 156, 0.457);
   border-radius: 19px;
-  width: 82%;
+  width: 54%;
   text-align: center;
   color: #fff;
+  margin-left: 22%;
 }
 .subtituloCripto:hover, .subtituloContabilidad:hover {
   cursor: pointer;
@@ -203,12 +201,40 @@ body {
 
 .videoCripto {
   margin-left: 8%;
+  width: 80%;
 }
 
+.paddingMobile {
+  margin-right: 2%;
+  margin-left: 2%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .paddingMobile {
+    margin-right: 5%;
+    margin-left: 0%;
+    text-align: center;
+  }
+
+  .subtituloCripto, .subtituloContabilidad {
+    margin-left: 38%;
+    width: 23%;
+  }
+
+  .divSubtitulo {
+    text-align: center;
+  }
+}
 @media (min-width: 1024px) {
+  .img-carrousel {
+    height: 400px;
+  }
+
   .grids {
     display: grid;
     justify-content: space-around;
+    margin-top: 4%;
     grid-template-areas: "cripto video wallet";
   }
 
@@ -222,6 +248,27 @@ body {
 
   .e-wallet {
     grid-area: wallet;
+  }
+
+  .videoCripto {
+    margin-left: 0%;
+    width: 100%;
+  }
+
+  .videoFinanzas {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .paddingMobile {
+    margin-right: 5%;
+    margin-left: 2%;
+    text-align: center;
+  }
+
+  .subtituloCripto, .subtituloContabilidad {
+    margin-left: 23%;
+    width: 50%;
   }
 }
 .img-fondo {
@@ -270,6 +317,10 @@ body {
   flex-direction: column;
   margin-top: 5%;
   gap: 2%;
+}
+
+.navNosotros {
+  color: blueviolet;
 }
 
 .imgIcons {
