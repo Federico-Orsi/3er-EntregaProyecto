@@ -40,6 +40,12 @@
 
 }    
 
+.subtituloContabilidad{
+    
+    @extend .subtituloCripto;
+
+}
+
 
 
 @media (min-width:768px){

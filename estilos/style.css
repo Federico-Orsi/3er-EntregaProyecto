@@ -178,15 +178,14 @@ body {
   flex-direction: column;
 }
 
-.subtituloCripto {
+.subtituloCripto, .subtituloContabilidad {
   background-color: rgba(149, 150, 156, 0.457);
   border-radius: 19px;
   width: 82%;
   text-align: center;
   color: #fff;
 }
-.subtituloCripto:hover {
-  color: black;
+.subtituloCripto:hover, .subtituloContabilidad:hover {
   cursor: pointer;
   border: solid black 2px;
 }
