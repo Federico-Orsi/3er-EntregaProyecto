@@ -1,7 +1,7 @@
 .servicios{
     background-color: rgb(201, 188, 165);
     height: 380px;
-    width: 300px;
+    width: 250px;
     border-radius: 5px;
     color:$cardsContabilidad;
     text-align: center;
@@ -11,10 +11,6 @@
 
 }
 
-.servicios:hover{
-    transform: scale(110%);
-    transition: all 1s;
-}
 
 
 
@@ -39,6 +35,11 @@
 
 }
 
+.serviciosContables{
+   display: flex;
+   flex-direction: column;
+}
+
 
 
 @media (min-width:768px){
@@ -46,7 +47,7 @@
     #servicios{
         display: flex;
         flex-direction: row ;
-        justify-content:center;
+        justify-content: space-around;
         margin-top: 160px;
         margin-bottom: 70px;
     
@@ -55,7 +56,15 @@
     
     .servicios{
         margin: 3px;
+        width: 226px;
     }
+       
+    
+    .servicios:hover{
+        transform: scale(110%);
+        transition: all 1s;
+      }
+    
     
     .separador{
         margin-top: -13px;
@@ -70,5 +79,18 @@
             padding-right: 15px;
         }
 
-     
+        .serviciosContables{
+            display: flex;
+            flex-direction: row;
+         }
+
+    }
+
+    @media (min-width:1024px){
+
+    .servicios{
+        margin: 3px;
+        width: 300px;
+    }
+
 }

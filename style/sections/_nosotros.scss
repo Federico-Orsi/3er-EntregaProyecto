@@ -14,15 +14,23 @@ height: 50px;
 width: 50px;
 }
 
-.iconDiv{
-    margin-left: 5%;
+
+.iconDivCentral{
+   margin-top: 15%;
+   margin-bottom: 15%;
 }
+
 
 
 .figcaption{
-    margin-left: 8%;
+    margin-left: 14%;
 }
 
+.textNosotros{
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+}
 
 #containerNosotros{
 align-self: center;
@@ -37,10 +45,6 @@ align-self: center;
 }
 
 
-
-.pNosotros{
-     display: none;
- }
 
  .displayServicios{
     display: flex;
@@ -58,13 +62,26 @@ align-self: center;
         width: 50%;
     }
 
-    .pNosotros{
-         display:unset;
+    .figcaption{
+        margin-left: 8%;
+    }
+   
+    .iconDiv{
+        margin-left: 5%;
+       
      }
 
-    .pNosotros-1{
-        display: none;
+    .iconDivCentral{
+        margin-top: 0;
+        margin-bottom: 0;
+     }
+     
+     .textNosotros{
+        padding-left: 2%;
+        padding-right: 2%;
+        text-align:unset;
     }
+    
 
     .displayServicios{
         display: flex;

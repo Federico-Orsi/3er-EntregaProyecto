@@ -94,18 +94,13 @@ body {
 .servicios {
   background-color: rgb(201, 188, 165);
   height: 380px;
-  width: 300px;
+  width: 250px;
   border-radius: 5px;
   color: #fff;
   text-align: center;
   margin: 5px;
   padding-top: 15px;
   font-family: "Times New Roman", Times, serif;
-}
-
-.servicios:hover {
-  transform: scale(110%);
-  transition: all 1s;
 }
 
 .servicios p {
@@ -124,17 +119,28 @@ body {
   align-items: center;
 }
 
+.serviciosContables {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 768px) {
   #servicios {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 160px;
     margin-bottom: 70px;
   }
 
   .servicios {
     margin: 3px;
+    width: 226px;
+  }
+
+  .servicios:hover {
+    transform: scale(110%);
+    transition: all 1s;
   }
 
   .separador {
@@ -148,6 +154,17 @@ body {
   .paddingP {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .serviciosContables {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .servicios {
+    margin: 3px;
+    width: 300px;
   }
 }
 .ubicacion {
@@ -328,12 +345,19 @@ body {
   width: 50px;
 }
 
-.iconDiv {
-  margin-left: 5%;
+.iconDivCentral {
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 .figcaption {
-  margin-left: 8%;
+  margin-left: 14%;
+}
+
+.textNosotros {
+  padding-left: 2%;
+  padding-right: 2%;
+  text-align: center;
 }
 
 #containerNosotros {
@@ -346,10 +370,6 @@ body {
 
 .h1Nosotros {
   text-align: center;
-}
-
-.pNosotros {
-  display: none;
 }
 
 .displayServicios {
@@ -367,12 +387,23 @@ body {
     width: 50%;
   }
 
-  .pNosotros {
-    display: unset;
+  .figcaption {
+    margin-left: 8%;
   }
 
-  .pNosotros-1 {
-    display: none;
+  .iconDiv {
+    margin-left: 5%;
+  }
+
+  .iconDivCentral {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .textNosotros {
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: unset;
   }
 
   .displayServicios {
