@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,12 @@ body {
 
 .bg-white {
   background-color: #fff;
+}
+
+.h3Titulo {
+  background-color: rgb(117, 106, 106);
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .footerInfo {
@@ -166,6 +173,58 @@ body {
   margin-left: 18%;
 }
 
+.grids {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtituloCripto {
+  background-color: rgba(149, 150, 156, 0.457);
+  border-radius: 19px;
+  width: 82%;
+  text-align: center;
+  color: #fff;
+}
+.subtituloCripto:hover {
+  color: black;
+  cursor: pointer;
+  border: solid black 2px;
+}
+
+.tuBanco {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  font-size: larger;
+  color: blueviolet;
+}
+
+.parrafo {
+  font-family: "Dancing Script", cursive;
+}
+
+.videoCripto {
+  margin-left: 8%;
+}
+
+@media (min-width: 1024px) {
+  .grids {
+    display: grid;
+    justify-content: space-around;
+    grid-template-areas: "cripto video wallet";
+  }
+
+  .cripto {
+    grid-area: cripto;
+  }
+
+  .videoFinanzas {
+    grid-area: video;
+  }
+
+  .e-wallet {
+    grid-area: wallet;
+  }
+}
 .img-fondo {
   background-image: url(../img/office\ notebook.jpg);
   height: 177px;
@@ -195,7 +254,7 @@ body {
 @media (min-width: 768px) {
   .img-fondo {
     background-image: url(../img/office\ notebook.jpg);
-    height: 400px;
+    height: 230px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw;
@@ -237,12 +296,6 @@ body {
 
 .h1Nosotros {
   text-align: center;
-}
-
-.h3Titulo {
-  background-color: rgb(117, 106, 106);
-  color: #fff;
-  font-family: "Times New Roman", Times, serif;
 }
 
 .pNosotros {
