@@ -38,7 +38,11 @@ body {
 }
 
 .whatsappFooter {
-  margin-top: 85%;
+  height: 25px;
+  width: 25px;
+  position: fixed;
+  right: 1%;
+  bottom: 4%;
 }
 
 .whatsappFooter:hover {
@@ -66,6 +70,10 @@ body {
   left: 0;
 }
 
+.marginNosotrosMobile {
+  margin-left: 6%;
+}
+
 .visibility {
   visibility: hidden;
   display: none;
@@ -86,9 +94,21 @@ body {
     font-size: small;
   }
 
+  .marginNosotrosMobile {
+    margin-left: 6%;
+  }
+
   .ocultarEnTablet {
     visibility: hidden;
     display: none;
+  }
+
+  .whatsappFooter {
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    right: 1%;
+    bottom: 4%;
   }
 }
 .servicios {
@@ -101,6 +121,7 @@ body {
   margin: 5px;
   padding-top: 15px;
   font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
 }
 
 .servicios p {
@@ -119,9 +140,38 @@ body {
   align-items: center;
 }
 
+.subtituloContabilidad {
+  margin-left: 18%;
+  width: 56%;
+}
+
 .serviciosContables {
   display: flex;
   flex-direction: column;
+}
+
+.infoContainer {
+  text-align: center;
+}
+
+.info {
+  background-color: rgb(13, 167, 13);
+  color: #fff;
+  display: inline-block;
+  height: 28%;
+  width: 65%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 26px;
+  font-size: large;
+  margin-top: -8%;
+  margin-bottom: 17%;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+.info:hover {
+  background-color: black;
 }
 
 @media (min-width: 768px) {
@@ -143,6 +193,51 @@ body {
     transition: all 1s;
   }
 
+  .subtituloContabilidad {
+    margin-left: 16%;
+    width: 60%;
+    background-color: rgba(149, 150, 156, 0.457);
+    display: inline-block;
+    border-radius: 19px;
+    text-align: center;
+    color: #fff;
+    margin-left: 22%;
+  }
+  .subtituloContabilidad:hover {
+    cursor: pointer;
+    border: solid black 2px;
+  }
+
+  #subtituloContabilidad {
+    margin-left: 16%;
+    width: 60%;
+    background-color: rgba(149, 150, 156, 0.457);
+    display: inline-block;
+    border-radius: 19px;
+    text-align: center;
+    color: #fff;
+    margin-left: 22%;
+  }
+  #subtituloContabilidad:hover {
+    cursor: pointer;
+    border: solid black 2px;
+  }
+
+  #subtituloContabilidad-2 {
+    margin-left: 16%;
+    width: 60%;
+    background-color: rgba(149, 150, 156, 0.457);
+    display: inline-block;
+    border-radius: 19px;
+    text-align: center;
+    color: #fff;
+    margin-left: 22%;
+  }
+  #subtituloContabilidad-2:hover {
+    cursor: pointer;
+    border: solid black 2px;
+  }
+
   .separador {
     margin-top: -13px;
   }
@@ -160,17 +255,65 @@ body {
     display: flex;
     flex-direction: row;
   }
+
+  .infoContainer {
+    text-align: center;
+  }
+
+  .info {
+    background-color: rgb(13, 167, 13);
+    color: #fff;
+    display: inline-block;
+    margin-top: 3%;
+    height: 28%;
+    width: 54%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 70px;
+    font-size: x-large;
+    margin-bottom: 10%;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .info:hover {
+    background-color: black;
+  }
 }
 @media (min-width: 1024px) {
   .servicios {
     margin: 3px;
     width: 300px;
   }
+
+  .info {
+    background-color: rgb(13, 167, 13);
+    color: #fff;
+    display: inline-block;
+    height: 28%;
+    width: 40%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 70px;
+    font-size: x-large;
+    margin-top: 1%;
+    margin-bottom: 6%;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .info:hover {
+    background-color: black;
+  }
 }
 .ubicacion {
   text-align: left;
   margin-right: 125px;
   color: black;
+}
+
+.nuestrasOficinas {
+  width: 600px;
 }
 
 .carrousel {
@@ -194,8 +337,9 @@ body {
 
 .subtituloCripto, .subtituloContabilidad {
   background-color: rgba(149, 150, 156, 0.457);
+  display: inline-block;
   border-radius: 19px;
-  width: 54%;
+  width: 56%;
   text-align: center;
   color: #fff;
   margin-left: 22%;
@@ -235,7 +379,12 @@ body {
   }
 
   .subtituloCripto, .subtituloContabilidad {
-    margin-left: 38%;
+    margin-left: 0;
+    width: 23%;
+  }
+
+  .subtituloWallet {
+    margin-left: 37%;
     width: 23%;
   }
 
@@ -246,6 +395,10 @@ body {
 @media (min-width: 1024px) {
   .img-carrousel {
     height: 400px;
+  }
+
+  #subtituloCripto {
+    margin-left: -6%;
   }
 
   .grids {

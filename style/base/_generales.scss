@@ -45,9 +45,17 @@ body{
     @include FooterTitleColor
 }
 
+
+
 .whatsappFooter{
-    margin-top: 85%;
+    height: 25px;
+    width: 25px;
+    position:fixed;
+    right: 1%;
+    bottom: 4%;
 }
+
+
 
 .whatsappFooter:hover{
     transform: scale(125%);
@@ -76,7 +84,9 @@ body{
 }
 
 
-
+.marginNosotrosMobile{
+    margin-left: 6%;
+}
 
 
 .visibility{
@@ -105,10 +115,22 @@ body{
         
     }
 
+    .marginNosotrosMobile{
+        margin-left: 6%;
+    }
+
     .ocultarEnTablet{
         visibility: hidden;
         display: none;
       }
+
+      .whatsappFooter{
+        height: 40px;
+        width: 40px;
+        position:fixed;
+        right: 1%;
+        bottom: 4%;
+    }
 
 }
 

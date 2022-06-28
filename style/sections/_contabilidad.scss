@@ -8,6 +8,7 @@
     margin: 5px;
     padding-top: 15px;
     font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
 
 }
 
@@ -32,12 +33,44 @@
 .subtituloContabilidad{
     
     @extend .subtituloCripto;
+    margin-left: 18%;
+    width: 56%;
 
 }
 
 .serviciosContables{
    display: flex;
    flex-direction: column;
+}
+
+.infoContainer{
+    text-align: center;
+}
+
+.info{
+    background-color: rgb(13, 167, 13);
+    color: #fff;
+    display: inline-block;
+    height: 28%;
+    width: 65%;
+    
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 26px;
+    font-size: large;
+    margin-top: -8% ;
+    margin-bottom: 17%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    cursor: pointer;
+
+
+    &:hover{
+        background-color: black;
+        // border: solid #fff 5px;
+    } 
+ 
+
 }
 
 
@@ -64,6 +97,71 @@
         transform: scale(110%);
         transition: all 1s;
       }
+
+      .subtituloContabilidad{
+    
+        
+        margin-left: 16%;
+        width: 60%;
+        background-color: rgba(149, 150, 156, 0.457);
+        display: inline-block;
+        border-radius: 19px;
+    
+        text-align: center;
+        color: #fff;
+        margin-left: 22%;
+    
+        &:hover{
+        
+        cursor: pointer;
+        border: solid black 2px;
+    }
+
+    
+    }
+
+
+    #subtituloContabilidad{
+
+        margin-left: 16%;
+        width: 60%;
+        background-color: rgba(149, 150, 156, 0.457);
+        display: inline-block;
+        border-radius: 19px;
+    
+        text-align: center;
+        color: #fff;
+        margin-left: 22%;
+    
+        &:hover{
+        
+        cursor: pointer;
+        border: solid black 2px;
+    }
+
+
+    }
+
+    #subtituloContabilidad-2{
+
+        margin-left: 16%;
+        width: 60%;
+        background-color: rgba(149, 150, 156, 0.457);
+        display: inline-block;
+        border-radius: 19px;
+    
+        text-align: center;
+        color: #fff;
+        margin-left: 22%;
+    
+        &:hover{
+        
+        cursor: pointer;
+        border: solid black 2px;
+    }
+
+
+    }
     
     
     .separador{
@@ -84,6 +182,37 @@
             flex-direction: row;
          }
 
+         .infoContainer{
+            text-align: center;
+            
+        }
+
+         .info{
+            background-color: rgb(13, 167, 13);
+            color: #fff;
+            display: inline-block;
+            margin-top: 3%;
+            height: 28%;
+            width: 54%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            border-radius: 70px;
+            font-size: x-large;
+            margin-bottom: 10%;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            cursor: pointer;
+        
+        
+            &:hover{
+                background-color: black;
+                
+            } 
+         
+        
+        }
+        
+
     }
 
     @media (min-width:1024px){
@@ -91,6 +220,31 @@
     .servicios{
         margin: 3px;
         width: 300px;
+    }
+
+    .info{
+        background-color: rgb(13, 167, 13);
+        color: #fff;
+        display: inline-block;
+        height: 28%;
+        width: 40%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-radius: 70px;
+        font-size: x-large;
+        margin-top: 1%;
+        margin-bottom: 6%;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        cursor: pointer;
+    
+    
+        &:hover{
+            background-color: black;
+            
+        } 
+     
+    
     }
 
 }

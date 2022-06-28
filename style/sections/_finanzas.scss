@@ -24,9 +24,10 @@
 
 .subtituloCripto{
     background-color: rgba(149, 150, 156, 0.457);
-    
+    display: inline-block;
     border-radius: 19px;
-    width: 54%;
+    width: 56%;
+    
     text-align: center;
     color: #fff;
     margin-left: 22%;
@@ -70,7 +71,13 @@ text-align: center
 
         .subtituloCripto{
     
-            margin-left: 38%;
+            margin-left: 0;
+            width: 23%;
+           }
+
+           .subtituloWallet{
+    
+            margin-left: 37%;
             width: 23%;
            }
 
@@ -88,7 +95,10 @@ text-align: center
         
     }
     
-  
+    #subtituloCripto{
+      margin-left: -6%;
+    } 
+
     .grids{
     display: grid;
     justify-content: space-around;
