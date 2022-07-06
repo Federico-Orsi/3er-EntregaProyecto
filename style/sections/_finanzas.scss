@@ -26,11 +26,15 @@
     background-color: rgba(149, 150, 156, 0.457);
     display: inline-block;
     border-radius: 19px;
-    width: 56%;
+    width: fit-content;
+    padding-left: 6px;
+    padding-bottom: 5px;
+    padding-right: 6px;
+    padding-top: 5px;
     
     text-align: center;
     color: #fff;
-    margin-left: 22%;
+    margin-left: -1%;
     
     &:hover{
         
@@ -40,6 +44,18 @@
 
 
 }
+
+
+.subtituloCripto-2{
+    @extend .subtituloCripto;
+
+   
+
+}
+
+
+
+
 
 .tuBanco{
     font-family: 'Dancing Script', cursive;
@@ -95,7 +111,7 @@ text-align: center
         
     }
     
-    #subtituloCripto{
+    .subtituloCripto-2{
       margin-left: -6%;
     } 
 
@@ -134,14 +150,24 @@ text-align: center
 .paddingMobile{
     margin-right: 5%;
     margin-left: 2%;
+    margin-top: 3%;
     text-align: center;
     }
 
 .subtituloCripto{
     
-    margin-left: 23%;
+    margin-left: -1%;
     width: 50%;
    }
 
+   .subtituloCripto-2{
+    margin-left: 23%;
+   }
+
+   .divSubtitulo{
+    margin-bottom: 3%;
+ 
+  }
+   
 
 }

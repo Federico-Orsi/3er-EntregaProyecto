@@ -20,7 +20,7 @@
     margin-block-end: 1em ;
 }
 
-#servicios{
+.serviciosContainer{
     display: flex;
     flex-direction: column ;
     justify-content:center;
@@ -30,18 +30,48 @@
 
 }    
 
+.divSegundaCard{
+ margin-top: 4%;
+ margin-bottom: 4%;
+}
+
 .subtituloContabilidad{
     
-    @extend .subtituloCripto;
-    margin-left: 18%;
-    width: 56%;
-
+    
+        
+        width:fit-content;
+        background-color: rgba(149, 150, 156, 0.457);
+        display: inline-block;
+        border-radius: 19px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        text-align: center;
+        color: #fff;
+        
+    
+        &:hover{
+        
+        cursor: pointer;
+        border: solid black 2px;
+        
+    }
 }
+
+
+
+
+
 
 .serviciosContables{
-   display: flex;
-   flex-direction: column;
-}
+    display: flex;
+    flex-direction: column;
+ }
+
+ .containerOrgEmpresarial{
+   margin-top: 5%;
+ }
 
 .infoContainer{
     text-align: center;
@@ -58,7 +88,7 @@
     padding-bottom: 1%;
     border-radius: 26px;
     font-size: large;
-    margin-top: -8% ;
+    margin-top: 2% ;
     margin-bottom: 17%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -67,7 +97,7 @@
 
     &:hover{
         background-color: black;
-        // border: solid #fff 5px;
+        
     } 
  
 
@@ -77,7 +107,7 @@
 
 @media (min-width:768px){
 
-    #servicios{
+    .serviciosContainer{
         display: flex;
         flex-direction: row ;
         justify-content: space-around;
@@ -98,70 +128,59 @@
         transition: all 1s;
       }
 
-      .subtituloContabilidad{
+      .divSegundaCard{
+        margin-top: 0;
+        margin-bottom: 0;
+       }
+      
+     
+      .serviciosContables{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+     }
     
-        
-        margin-left: 16%;
-        width: 60%;
-        background-color: rgba(149, 150, 156, 0.457);
-        display: inline-block;
-        border-radius: 19px;
-    
-        text-align: center;
+
+     .margenContabilidadIntegral{
+        margin-right: 10%;
+     }
+
+     .containerOrgEmpresarial{
+        margin-top: 0%;
+      }
+
+
+      .info{
+        background-color: rgb(13, 167, 13);
         color: #fff;
-        margin-left: 22%;
+        display: inline-block;
+        margin-top: 3%;
+        height: 28%;
+        width: 54%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-radius: 70px;
+        font-size: x-large;
+        margin-bottom: 10%;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        cursor: pointer;
+    
     
         &:hover{
-        
-        cursor: pointer;
-        border: solid black 2px;
-    }
-
+            background-color: black;
+            
+        } 
+     
     
     }
-
-
-    #subtituloContabilidad{
-
-        margin-left: 16%;
-        width: 60%;
-        background-color: rgba(149, 150, 156, 0.457);
-        display: inline-block;
-        border-radius: 19px;
     
-        text-align: center;
-        color: #fff;
-        margin-left: 22%;
-    
-        &:hover{
-        
-        cursor: pointer;
-        border: solid black 2px;
+
     }
 
 
-    }
-
-    #subtituloContabilidad-2{
-
-        margin-left: 16%;
-        width: 60%;
-        background-color: rgba(149, 150, 156, 0.457);
-        display: inline-block;
-        border-radius: 19px;
     
-        text-align: center;
-        color: #fff;
-        margin-left: 22%;
-    
-        &:hover{
-        
-        cursor: pointer;
-        border: solid black 2px;
-    }
 
-
-    }
     
     
     .separador{
@@ -177,43 +196,7 @@
             padding-right: 15px;
         }
 
-        .serviciosContables{
-            display: flex;
-            flex-direction: row;
-         }
-
-         .infoContainer{
-            text-align: center;
             
-        }
-
-         .info{
-            background-color: rgb(13, 167, 13);
-            color: #fff;
-            display: inline-block;
-            margin-top: 3%;
-            height: 28%;
-            width: 54%;
-            padding-top: 1%;
-            padding-bottom: 1%;
-            border-radius: 70px;
-            font-size: x-large;
-            margin-bottom: 10%;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
-            cursor: pointer;
-        
-        
-            &:hover{
-                background-color: black;
-                
-            } 
-         
-        
-        }
-        
-
-    }
 
     @media (min-width:1024px){
 

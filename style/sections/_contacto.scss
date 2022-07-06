@@ -1,9 +1,56 @@
+
+.containerContacto{
+    display: flex;
+    flex-direction: column;
+}
+
 .ubicacion{
-    text-align: left;
-    margin-right: 125px;
+    text-align: center;
+    
     color: $ubicacion-Contacto ;
 }
 
 .nuestrasOficinas{
+    width: 320px;
+    height: 400px;
+    margin-left: 8%;
+}
+
+
+@media (min-width:768px){
+
+    .containerContacto{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .ubicacion{
+        text-align: left;
+        margin-right: 17px;
+        
+    }
+    
+    .nuestrasOficinas{
+        width: 520px;
+        margin-left: 0;
+        height: 520px;
+    }
+    
+    }
+
+
+
+@media (min-width:1024px){
+
+.ubicacion{
+    text-align: left;
+    margin-right: 125px;
+    
+}
+
+.nuestrasOficinas{
     width: 600px;
+    height: 600px;
+}
+
 }
