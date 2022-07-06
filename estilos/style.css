@@ -357,6 +357,10 @@ body {
   flex-direction: column;
 }
 
+.divSubtitulo {
+  text-align: center;
+}
+
 .subtituloCripto, .subtituloCripto-2 {
   background-color: rgba(149, 150, 156, 0.457);
   display: inline-block;
@@ -410,15 +414,6 @@ body {
     margin-left: 0;
     width: 23%;
   }
-
-  .subtituloWallet {
-    margin-left: 37%;
-    width: 23%;
-  }
-
-  .divSubtitulo {
-    text-align: center;
-  }
 }
 @media (min-width: 1024px) {
   .img-carrousel {
@@ -426,7 +421,7 @@ body {
   }
 
   .subtituloCripto-2 {
-    margin-left: -6%;
+    margin-left: -1%;
   }
 
   .grids {
@@ -468,10 +463,6 @@ body {
   .subtituloCripto, .subtituloCripto-2 {
     margin-left: -1%;
     width: 50%;
-  }
-
-  .subtituloCripto-2 {
-    margin-left: 23%;
   }
 
   .divSubtitulo {

@@ -22,6 +22,10 @@
     flex-direction: column;
 }
 
+.divSubtitulo{
+    text-align: center;
+  }
+
 .subtituloCripto{
     background-color: rgba(149, 150, 156, 0.457);
     display: inline-block;
@@ -91,15 +95,9 @@ text-align: center
             width: 23%;
            }
 
-           .subtituloWallet{
-    
-            margin-left: 37%;
-            width: 23%;
-           }
+           
 
-      .divSubtitulo{
-        text-align: center;
-      }
+      
 }
 
 
@@ -112,7 +110,7 @@ text-align: center
     }
     
     .subtituloCripto-2{
-      margin-left: -6%;
+      margin-left: -1%;
     } 
 
     .grids{
@@ -160,9 +158,7 @@ text-align: center
     width: 50%;
    }
 
-   .subtituloCripto-2{
-    margin-left: 23%;
-   }
+   
 
    .divSubtitulo{
     margin-bottom: 3%;
