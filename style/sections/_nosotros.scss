@@ -23,7 +23,8 @@ width: 50px;
 
 
 .figcaption{
-    margin-left: 14%;
+    margin-left: 0;
+    text-align: center;
 }
 
 .textNosotros{
@@ -64,6 +65,7 @@ align-self: center;
 
     .figcaption{
         margin-left: 8%;
+        text-align:unset;
     }
    
     .iconDiv{

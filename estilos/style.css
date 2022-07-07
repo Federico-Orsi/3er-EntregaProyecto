@@ -38,16 +38,16 @@ body {
 }
 
 .whatsappFooter {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   position: fixed;
   right: 1%;
   bottom: 4%;
 }
-
 .whatsappFooter:hover {
   transform: scale(125%);
   transition: all 1s;
+  cursor: pointer;
 }
 
 .after {
@@ -183,6 +183,7 @@ body {
   display: inline-block;
   height: 28%;
   width: 65%;
+  text-decoration: none;
   padding-top: 1%;
   padding-bottom: 1%;
   border-radius: 26px;
@@ -195,6 +196,7 @@ body {
 }
 .info:hover {
   background-color: black;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -307,7 +309,10 @@ body {
 .nuestrasOficinas {
   width: 320px;
   height: 400px;
-  margin-left: 8%;
+}
+
+.mapaContacto {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -532,7 +537,8 @@ body {
 }
 
 .figcaption {
-  margin-left: 14%;
+  margin-left: 0;
+  text-align: center;
 }
 
 .textNosotros {
@@ -570,6 +576,7 @@ body {
 
   .figcaption {
     margin-left: 8%;
+    text-align: unset;
   }
 
   .iconDiv {
