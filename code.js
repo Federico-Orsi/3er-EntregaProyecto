@@ -169,18 +169,18 @@ carteraClientes.unshift(cliente3);
 
 console.log(carteraClientes);
 
-carteraClientes.push(cliente2);
+carteraClientes.push(nuevoCliente);
 
 console.table(carteraClientes);
 
-carteraClientes.unshift({nuevoCliente});
+carteraClientes.unshift({cliente2});
 console.log(carteraClientes);
 
 
-carteraClientes.shift({nuevoCliente});
+carteraClientes.shift({cliente2});
 console.log(carteraClientes);
 
-carteraClientes.pop({cliente2});
+carteraClientes.pop();
 console.log(carteraClientes);
 
 carteraClientes.reverse();
