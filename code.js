@@ -119,21 +119,21 @@
 
 
 class Cliente {
-  constructor (codigoCliente, razonSocial, condicionIva, tipoDePlan, precioDelPlan){
+  constructor (codigoCliente, razonSocial, condicionIva, tipoDePlan){
     this.codigoCliente = codigoCliente;
     this.razonSocial = razonSocial;
     this.condicionIva = condicionIva;
     this.tipoDePlan = tipoDePlan;
-    this.precioDelPlan = precioDelPlan;
+   
   }
 
 }
 
 // Clientes con datos Hardcodeados:
 
-const cliente1 = new Cliente(1111, "Trebol srl", "Resp. Inscripto", "Intermedio", 20000);
-const cliente2 = new Cliente(2222, "Space SA", "Resp. Inscripto", "Premium", 30000);
-const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico", 10000);
+const cliente1 = new Cliente(1111, "Trebol srl", "Resp. Inscripto", "Intermedio");
+const cliente2 = new Cliente(2222, "Space SA", "Resp. Inscripto", "Premium");
+const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
   
 
 
@@ -143,10 +143,65 @@ let codCliente = Number(prompt("Hola, por favor ingrese su Código de cliente.")
 let razSocial = prompt("Hola, por favor ingrese su Razón Social.");
 let condIva = prompt("Hola, por favor ingrese su condicion frente al IVA.");
 let plan = prompt("Hola, por favor ingrese su tipo de plan elegido.");
-let precio = Number(prompt("Hola, por favor ingrese el valor de su plan."));
 
 
-const nuevoCliente = new Cliente(codCliente, razSocial, condIva, plan, precio);
+const nuevoCliente = new Cliente(codCliente, razSocial, condIva, plan);
+
+
+
+class Servicio {
+  constructor (plan, descripcion, precioNetoPlan){
+    this.plan = plan;
+    this.descripcion = descripcion;
+    this.precioNetoPlan = precioNetoPlan;
+    
+  }
+}
+
+const planBasico = new Servicio("Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000);
+
+const planIntermedio = new Servicio("Intermedio", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables).", 20000);
+
+const planPremium = new Servicio("Premium", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables). Nos ocuparemos de resolver todo lo Laboral (Liquidación de sueldos y jornales, Liquidación de Boletas Sindicales). Por último este servicio Premium incluye además asesoramiento permamente en materia Financiera y Tributaria-Fiscal.", 30000);
+
+const servicios = [];
+
+const agregarServicios = () => {
+
+servicios.push(planBasico);
+servicios.push(planIntermedio);
+servicios.push(planPremium);
+console.log(servicios);
+
+
+}
+
+agregarServicios();
+
+
+// Mostrar en cosola los Precios Netos del Array Servicios
+servicios.forEach(Servicio => console.log(Servicio.precioNetoPlan));
+
+
+// Generar nuevo Array incluyendo solamente los precios finales de cada plan.
+const serviciosSoloConPrecioFinal = servicios.map(Servicio => Servicio.precioNetoPlan*1.21);
+console.log(serviciosSoloConPrecioFinal);
+
+// Generar nuevo Array incluyendo tipo de Plan y los precios finales de los mismos.
+const serviciosConPrecioFinal = servicios.map(servicio => {
+  return {
+  
+  Plan: servicio.plan,
+  PrecioFinal: servicio.precioNetoPlan*1.21
+  
+}
+});
+console.log(serviciosConPrecioFinal);
+
+
+// Buscar planes menores a $15000 en el Array de Precios con iva incluido.
+const buscarPlanMenorA15K = serviciosConPrecioFinal.filter(servicio => servicio.PrecioFinal < 15000);
+console.log(buscarPlanMenorA15K);
 
 
 
@@ -157,34 +212,14 @@ const carteraClientes = [];
 console.log(carteraClientes);
 
 
-
-
-
-
 carteraClientes.push(cliente1);
-
-console.table(carteraClientes);
-
 carteraClientes.unshift(cliente3);
-
-console.log(carteraClientes);
-
 carteraClientes.push(nuevoCliente);
+carteraClientes.unshift(cliente2);
 
 console.table(carteraClientes);
 
-carteraClientes.unshift({cliente2});
-console.log(carteraClientes);
 
-
-carteraClientes.shift({cliente2});
-console.log(carteraClientes);
-
-carteraClientes.pop();
-console.log(carteraClientes);
-
-carteraClientes.reverse();
-console.log(carteraClientes);
 
 }
 
