@@ -139,13 +139,13 @@ const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
 
 // Cliente generado de manera dinámica:
 
-let codCliente = Number(prompt("Hola, por favor ingrese su Código de cliente."));
-let razSocial = prompt("Hola, por favor ingrese su Razón Social.");
-let condIva = prompt("Hola, por favor ingrese su condicion frente al IVA.");
-let plan = prompt("Hola, por favor ingrese su tipo de plan elegido.");
+// let codCliente = Number(prompt("Hola, por favor ingrese su Código de cliente."));
+// let razSocial = prompt("Hola, por favor ingrese su Razón Social.");
+// let condIva = prompt("Hola, por favor ingrese su condicion frente al IVA.");
+// let plan = prompt("Hola, por favor ingrese su tipo de plan elegido.");
 
 
-const nuevoCliente = new Cliente(codCliente, razSocial, condIva, plan);
+// const nuevoCliente = new Cliente(codCliente, razSocial, condIva, plan);
 
 
 
@@ -214,7 +214,7 @@ console.log(carteraClientes);
 
 carteraClientes.push(cliente1);
 carteraClientes.unshift(cliente3);
-carteraClientes.push(nuevoCliente);
+// carteraClientes.push(nuevoCliente);
 carteraClientes.unshift(cliente2);
 
 console.table(carteraClientes);
@@ -223,5 +223,82 @@ console.table(carteraClientes);
 
 }
 
-
 generarArrayClientes();
+
+
+// Agregar Elementos al DOM:
+
+const crearElemento = () => {
+
+let articleCreadoConJs = document.createElement("article");
+articleCreadoConJs.className = "d-flex justify-content-around";
+articleCreadoConJs.innerHTML = `
+  <div class="card mt-4 mb-4" style="width: 18rem;">
+  <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Plan ${servicios[0].plan}</h5>
+    <p class="card-text">${servicios[0].descripcion}</p>
+    <a href="#" class="btn btn-primary">${servicios[0].precioNetoPlan}</a>
+  </div>
+  </div>
+`;  
+
+
+let contenedorCard = document.getElementById("sectionCard");
+contenedorCard.append(articleCreadoConJs);
+contenedorCard.style.background = "yellow";
+
+}
+
+crearElemento();
+
+
+
+// Agarrar Elementos del HTML y modificarlos con JS:
+
+const modificarElemento = () => {
+
+let articleAgarradoConJs = document.getElementById("articleCardPlanIntermedio");
+articleAgarradoConJs.className = "d-flex justify-content-around";
+articleAgarradoConJs.innerHTML = `
+  <div class="card mt-4 mb-4" style="width: 18rem;">
+  <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Plan ${servicios[1].plan}</h5>
+    <p class="card-text">${servicios[1].descripcion}</p>
+    <a href="#" class="btn btn-primary">${servicios[1].precioNetoPlan}</a>
+  </div>
+  </div>
+`;  
+}
+
+modificarElemento();
+
+const agarrarYGenerarPlanPremium = () => {
+
+  let articleAgarradoConJs = document.getElementById("articleCardPlanPremium");
+  articleAgarradoConJs.className = "d-flex justify-content-around";
+  articleAgarradoConJs.innerHTML = `
+    <div class="card mt-4 mb-4" style="width: 18rem;">
+    <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Plan ${servicios[2].plan}</h5>
+      <p class="card-text">${servicios[2].descripcion}</p>
+      <a href="#" class="btn btn-primary">${servicios[2].precioNetoPlan}</a>
+    </div>
+    </div>
+  `;  
+  }
+  
+  agarrarYGenerarPlanPremium();
+
+
+
+const vaciarConJs = () => {
+
+  let dejarVacio = document.getElementById("dejarVacioConJs"); 
+  dejarVacio.innerHTML = "";
+
+}
+ 
+vaciarConJs();
