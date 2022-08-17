@@ -137,6 +137,10 @@ const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
   
 
 
+
+
+
+
 // Cliente generado de manera dinámica:
 
 // let codCliente = Number(prompt("Hola, por favor ingrese su Código de cliente."));
@@ -238,7 +242,7 @@ articleCreadoConJs.innerHTML = `
   <div class="card-body">
     <h5 class="card-title">Plan ${servicios[0].plan}</h5>
     <p class="card-text">${servicios[0].descripcion}</p>
-    <a href="#" class="btn btn-primary">${servicios[0].precioNetoPlan}</a>
+    <p id="onClickAlertBasico" class="btn btn-primary">${servicios[0].precioNetoPlan}</p>
   </div>
   </div>
 `;  
@@ -247,6 +251,13 @@ articleCreadoConJs.innerHTML = `
 let contenedorCard = document.getElementById("sectionCard");
 contenedorCard.append(articleCreadoConJs);
 contenedorCard.style.background = "yellow";
+
+let eventoPrueba = document.getElementById("onClickAlertBasico");
+   eventoPrueba.onclick =()=> {
+   confirm("Usted seleccionó el Plan Básico.");
+   }
+
+
 
 }
 
@@ -266,10 +277,16 @@ articleAgarradoConJs.innerHTML = `
   <div class="card-body">
     <h5 class="card-title">Plan ${servicios[1].plan}</h5>
     <p class="card-text">${servicios[1].descripcion}</p>
-    <a href="#" class="btn btn-primary">${servicios[1].precioNetoPlan}</a>
+    <p id="onClickAlert" class="btn btn-primary">${servicios[1].precioNetoPlan}</p>
   </div>
   </div>
-`;  
+`;
+
+let eventoPrueba = document.getElementById("onClickAlert");
+eventoPrueba.onclick = () => {
+   confirm("Usted seleccionó el Plan Intermedio.");
+}
+
 }
 
 modificarElemento();
@@ -284,10 +301,16 @@ const agarrarYGenerarPlanPremium = () => {
     <div class="card-body">
       <h5 class="card-title">Plan ${servicios[2].plan}</h5>
       <p class="card-text">${servicios[2].descripcion}</p>
-      <a href="#" class="btn btn-primary">${servicios[2].precioNetoPlan}</a>
+      <a id="onClickAlertPremium" class="btn btn-primary">${servicios[2].precioNetoPlan}</a>
     </div>
     </div>
   `;  
+
+  let eventoPrueba = document.getElementById("onClickAlertPremium");
+   eventoPrueba.onclick =()=> {
+   confirm("Usted seleccionó el Plan Premium.");
+   }
+
   }
   
   agarrarYGenerarPlanPremium();
@@ -302,3 +325,18 @@ const vaciarConJs = () => {
 }
  
 vaciarConJs();
+
+
+let mirror = document.getElementById("mirror");
+mirror.innerText = "Mirror: este Input mostrará debajo la info que se le ingrese."
+
+let inputtPrueba = document.getElementById("inputPrueba");
+
+
+inputtPrueba.oninput = () => {
+
+inputtPrueba.value;  
+let parrafo = document.getElementById("parrafoPrueba");
+parrafo.innerHTML = `${inputtPrueba.value}`;
+
+}
