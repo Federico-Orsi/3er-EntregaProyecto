@@ -340,3 +340,38 @@ let parrafo = document.getElementById("parrafoPrueba");
 parrafo.innerHTML = `${inputtPrueba.value}`;
 
 }
+
+let planesAplicandoForOf = document.getElementById("planesAplicandoForOf");
+
+const aplicarForOfAPlanes = () => {
+
+  for (const servicio of servicios) {
+  
+
+    planesAplicandoForOf.className = "d-flex justify-content-around";
+    planesAplicandoForOf.innerHTML += `
+      <div class="card mt-4 mb-4" style="width: 18rem;">
+      <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Plan ${servicio.plan}</h5>
+        <p class="card-text">${servicio.descripcion}</p>
+        <p id="planDinamizado${servicio.plan}" class="btn btn-primary">${servicio.precioNetoPlan}</p>
+      </div>
+      </div>
+    `;
+
+  }
+
+  servicios.forEach(servicio => {
+    
+    let eventoPrueba = document.getElementById(`planDinamizado${servicio.plan}`);
+    eventoPrueba.onclick = () => {
+       confirm(`Usted seleccionó el Plan ${servicio.plan}.`);
+    }
+
+  })
+  
+  
+  }
+  
+  aplicarForOfAPlanes();
