@@ -151,6 +151,16 @@ const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
 
 // const nuevoCliente = new Cliente(codCliente, razSocial, condIva, plan);
 
+class ElementoCarrito {
+  constructor (servicio, cantidad){
+    this.servicio = servicio;
+    this.cantidad = cantidad;
+    
+  }
+}
+
+const elementosCarrito = [];
+
 
 
 class Servicio {
@@ -367,6 +377,9 @@ const aplicarForOfAPlanes = () => {
     let eventoPrueba = document.getElementById(`planDinamizado${servicio.plan}`);
     eventoPrueba.onclick = () => {
        confirm(`Usted seleccionó el Plan ${servicio.plan}.`);
+       let elementoCarrito = new ElementoCarrito(servicio, 1);
+       elementosCarrito.push(elementoCarrito) ;
+       console.log(elementosCarrito);
     }
 
   })
