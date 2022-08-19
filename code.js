@@ -164,7 +164,8 @@ const elementosCarrito = [];
 
 
 class Servicio {
-  constructor (plan, descripcion, precioNetoPlan){
+  constructor (ID, plan, descripcion, precioNetoPlan){
+    this.ID = ID;
     this.plan = plan;
     this.descripcion = descripcion;
     this.precioNetoPlan = precioNetoPlan;
@@ -172,11 +173,11 @@ class Servicio {
   }
 }
 
-const planBasico = new Servicio("Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000);
+const planBasico = new Servicio(1, "Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000);
 
-const planIntermedio = new Servicio("Intermedio", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables).", 20000);
+const planIntermedio = new Servicio(2, "Intermedio", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables).", 20000);
 
-const planPremium = new Servicio("Premium", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables). Nos ocuparemos de resolver todo lo Laboral (Liquidación de sueldos y jornales, Liquidación de Boletas Sindicales). Por último este servicio Premium incluye además asesoramiento permamente en materia Financiera y Tributaria-Fiscal.", 30000);
+const planPremium = new Servicio(3, "Premium", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables). Nos ocuparemos de resolver todo lo Laboral (Liquidación de sueldos y jornales, Liquidación de Boletas Sindicales). Por último este servicio Premium incluye además asesoramiento permamente en materia Financiera y Tributaria-Fiscal.", 30000);
 
 const servicios = [];
 
@@ -194,136 +195,136 @@ agregarServicios();
 
 
 // Mostrar en cosola los Precios Netos del Array Servicios
-servicios.forEach(Servicio => console.log(Servicio.precioNetoPlan));
+// servicios.forEach(Servicio => console.log(Servicio.precioNetoPlan));
 
 
 // Generar nuevo Array incluyendo solamente los precios finales de cada plan.
-const serviciosSoloConPrecioFinal = servicios.map(Servicio => Servicio.precioNetoPlan*1.21);
-console.log(serviciosSoloConPrecioFinal);
+// const serviciosSoloConPrecioFinal = servicios.map(Servicio => Servicio.precioNetoPlan*1.21);
+// console.log(serviciosSoloConPrecioFinal);
 
 // Generar nuevo Array incluyendo tipo de Plan y los precios finales de los mismos.
-const serviciosConPrecioFinal = servicios.map(servicio => {
-  return {
+// const serviciosConPrecioFinal = servicios.map(servicio => {
+//   return {
   
-  Plan: servicio.plan,
-  PrecioFinal: servicio.precioNetoPlan*1.21
+//   Plan: servicio.plan,
+//   PrecioFinal: servicio.precioNetoPlan*1.21
   
-}
-});
-console.log(serviciosConPrecioFinal);
+// }
+// });
+// console.log(serviciosConPrecioFinal);
 
 
 // Buscar planes menores a $15000 en el Array de Precios con iva incluido.
-const buscarPlanMenorA15K = serviciosConPrecioFinal.filter(servicio => servicio.PrecioFinal < 15000);
-console.log(buscarPlanMenorA15K);
+// const buscarPlanMenorA15K = serviciosConPrecioFinal.filter(servicio => servicio.PrecioFinal < 15000);
+// console.log(buscarPlanMenorA15K);
 
 
 
-const generarArrayClientes = () => {
+// const generarArrayClientes = () => {
 
-const carteraClientes = [];
+// const carteraClientes = [];
 
-console.log(carteraClientes);
-
-
-carteraClientes.push(cliente1);
-carteraClientes.unshift(cliente3);
-// carteraClientes.push(nuevoCliente);
-carteraClientes.unshift(cliente2);
-
-console.table(carteraClientes);
+// console.log(carteraClientes);
 
 
+// carteraClientes.push(cliente1);
+// carteraClientes.unshift(cliente3);
+// // carteraClientes.push(nuevoCliente);
+// carteraClientes.unshift(cliente2);
 
-}
+// console.table(carteraClientes);
 
-generarArrayClientes();
+
+
+// }
+
+// generarArrayClientes();
 
 
 // Agregar Elementos al DOM:
 
-const crearElemento = () => {
+// const crearElemento = () => {
 
-let articleCreadoConJs = document.createElement("article");
-articleCreadoConJs.className = "d-flex justify-content-around";
-articleCreadoConJs.innerHTML = `
-  <div class="card mt-4 mb-4" style="width: 18rem;">
-  <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Plan ${servicios[0].plan}</h5>
-    <p class="card-text">${servicios[0].descripcion}</p>
-    <p id="onClickAlertBasico" class="btn btn-primary">${servicios[0].precioNetoPlan}</p>
-  </div>
-  </div>
-`;  
-
-
-let contenedorCard = document.getElementById("sectionCard");
-contenedorCard.append(articleCreadoConJs);
-contenedorCard.style.background = "yellow";
-
-let eventoPrueba = document.getElementById("onClickAlertBasico");
-   eventoPrueba.onclick =()=> {
-   confirm("Usted seleccionó el Plan Básico.");
-   }
+// let articleCreadoConJs = document.createElement("article");
+// articleCreadoConJs.className = "d-flex justify-content-around";
+// articleCreadoConJs.innerHTML = `
+//   <div class="card mt-4 mb-4" style="width: 18rem;">
+//   <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+//   <div class="card-body">
+//     <h5 class="card-title">Plan ${servicios[0].plan}</h5>
+//     <p class="card-text">${servicios[0].descripcion}</p>
+//     <p id="onClickAlertBasico" class="btn btn-primary">${servicios[0].precioNetoPlan}</p>
+//   </div>
+//   </div>
+// `;  
 
 
+// let contenedorCard = document.getElementById("sectionCard");
+// contenedorCard.append(articleCreadoConJs);
+// contenedorCard.style.background = "yellow";
 
-}
+// let eventoPrueba = document.getElementById("onClickAlertBasico");
+//    eventoPrueba.onclick =()=> {
+//    confirm("Usted seleccionó el Plan Básico.");
+//    }
 
-crearElemento();
+
+
+// }
+
+// crearElemento();
 
 
 
 // Agarrar Elementos del HTML y modificarlos con JS:
 
-const modificarElemento = () => {
+// const modificarElemento = () => {
 
-let articleAgarradoConJs = document.getElementById("articleCardPlanIntermedio");
-articleAgarradoConJs.className = "d-flex justify-content-around";
-articleAgarradoConJs.innerHTML = `
-  <div class="card mt-4 mb-4" style="width: 18rem;">
-  <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Plan ${servicios[1].plan}</h5>
-    <p class="card-text">${servicios[1].descripcion}</p>
-    <p id="onClickAlert" class="btn btn-primary">${servicios[1].precioNetoPlan}</p>
-  </div>
-  </div>
-`;
+// let articleAgarradoConJs = document.getElementById("articleCardPlanIntermedio");
+// articleAgarradoConJs.className = "d-flex justify-content-around";
+// articleAgarradoConJs.innerHTML = `
+//   <div class="card mt-4 mb-4" style="width: 18rem;">
+//   <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+//   <div class="card-body">
+//     <h5 class="card-title">Plan ${servicios[1].plan}</h5>
+//     <p class="card-text">${servicios[1].descripcion}</p>
+//     <p id="onClickAlert" class="btn btn-primary">${servicios[1].precioNetoPlan}</p>
+//   </div>
+//   </div>
+// `;
 
-let eventoPrueba = document.getElementById("onClickAlert");
-eventoPrueba.onclick = () => {
-   confirm("Usted seleccionó el Plan Intermedio.");
-}
+// let eventoPrueba = document.getElementById("onClickAlert");
+// eventoPrueba.onclick = () => {
+//    confirm("Usted seleccionó el Plan Intermedio.");
+// }
 
-}
+// }
 
-modificarElemento();
+// modificarElemento();
 
-const agarrarYGenerarPlanPremium = () => {
+// const agarrarYGenerarPlanPremium = () => {
 
-  let articleAgarradoConJs = document.getElementById("articleCardPlanPremium");
-  articleAgarradoConJs.className = "d-flex justify-content-around";
-  articleAgarradoConJs.innerHTML = `
-    <div class="card mt-4 mb-4" style="width: 18rem;">
-    <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Plan ${servicios[2].plan}</h5>
-      <p class="card-text">${servicios[2].descripcion}</p>
-      <a id="onClickAlertPremium" class="btn btn-primary">${servicios[2].precioNetoPlan}</a>
-    </div>
-    </div>
-  `;  
+//   let articleAgarradoConJs = document.getElementById("articleCardPlanPremium");
+//   articleAgarradoConJs.className = "d-flex justify-content-around";
+//   articleAgarradoConJs.innerHTML = `
+//     <div class="card mt-4 mb-4" style="width: 18rem;">
+//     <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+//     <div class="card-body">
+//       <h5 class="card-title">Plan ${servicios[2].plan}</h5>
+//       <p class="card-text">${servicios[2].descripcion}</p>
+//       <a id="onClickAlertPremium" class="btn btn-primary">${servicios[2].precioNetoPlan}</a>
+//     </div>
+//     </div>
+//   `;  
 
-  let eventoPrueba = document.getElementById("onClickAlertPremium");
-   eventoPrueba.onclick =()=> {
-   confirm("Usted seleccionó el Plan Premium.");
-   }
+//   let eventoPrueba = document.getElementById("onClickAlertPremium");
+//    eventoPrueba.onclick =()=> {
+//    confirm("Usted seleccionó el Plan Premium.");
+//    }
 
-  }
+//   }
   
-  agarrarYGenerarPlanPremium();
+//   agarrarYGenerarPlanPremium();
 
 
 
@@ -351,6 +352,8 @@ parrafo.innerHTML = `${inputtPrueba.value}`;
 
 }
 
+// Servicios agregados dinamicamente:
+
 let planesAplicandoForOf = document.getElementById("planesAplicandoForOf");
 
 const aplicarForOfAPlanes = () => {
@@ -365,26 +368,74 @@ const aplicarForOfAPlanes = () => {
       <div class="card-body">
         <h5 class="card-title">Plan ${servicio.plan}</h5>
         <p class="card-text">${servicio.descripcion}</p>
-        <p id="planDinamizado${servicio.plan}" class="btn btn-primary">${servicio.precioNetoPlan}</p>
+        <p id="planDinamizado${servicio.ID}" class="btn btn-primary">${servicio.precioNetoPlan}</p>
       </div>
       </div>
     `;
 
   }
 
+  // Boton que pushea Elementos al Carrito y activa la funcion GenerarCarrito!!
+
   servicios.forEach(servicio => {
     
-    let eventoPrueba = document.getElementById(`planDinamizado${servicio.plan}`);
+    let eventoPrueba = document.getElementById(`planDinamizado${servicio.ID}`);
     eventoPrueba.onclick = () => {
        confirm(`Usted seleccionó el Plan ${servicio.plan}.`);
+       
        let elementoCarrito = new ElementoCarrito(servicio, 1);
        elementosCarrito.push(elementoCarrito) ;
-       console.log(elementosCarrito);
+       
+       generarCarrito();
+
     }
 
-  })
+  });
   
   
   }
   
   aplicarForOfAPlanes();
+
+  
+  let contenedorCarrito = document.getElementById("contenedorFilaCarrito");
+
+
+  const generarCarrito = () => {
+
+  let filaDelModal = '';
+
+elementosCarrito.forEach((elemento) => {
+
+
+
+filaDelModal+=`
+                <tr>
+                <td>${elemento.servicio.ID}</td>
+                <td>${elemento.servicio.plan}</td>
+                <td><input id="servicio-cantidad-${elemento.servicio.ID}" type="number" value="${elemento.cantidad}" min="1" max="1000" step="1"> </input></td>
+                <td>${elemento.servicio.precioNetoPlan}</td>
+                <td>${elemento.servicio.precioNetoPlan*elemento.cantidad}</td>
+                <td><button> Eliminar  </button></td>
+                </tr>
+
+
+`;
+
+contenedorCarrito.innerHTML = filaDelModal;  
+
+let inputCantidadProducto = document.getElementById(`servicio-cantidad-${elemento.servicio.ID}`);
+
+inputCantidadProducto.onchange = () => {
+
+  elemento.cantidad = inputCantidadProducto.value;
+  
+  generarCarrito();
+}
+
+
+});
+
+
+
+}
