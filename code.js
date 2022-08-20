@@ -399,14 +399,16 @@ const aplicarForOfAPlanes = () => {
 
   
   let contenedorCarrito = document.getElementById("contenedorFilaCarrito");
+  let modalFooter = document.getElementById("footerModal");
 
 
   const generarCarrito = () => {
 
   let filaDelModal = '';
 
-elementosCarrito.forEach((elemento) => {
+  let sumaCarro = 0;
 
+elementosCarrito.forEach((elemento) => {
 
 
 filaDelModal+=`
@@ -416,13 +418,15 @@ filaDelModal+=`
                 <td><input id="servicio-cantidad-${elemento.servicio.ID}" type="number" value="${elemento.cantidad}" min="1" max="1000" step="1"> </input></td>
                 <td>${elemento.servicio.precioNetoPlan}</td>
                 <td>${elemento.servicio.precioNetoPlan*elemento.cantidad}</td>
-                <td><button> Eliminar  </button></td>
+                <td><button id="servicio-eliminar-${elemento.servicio.ID}" type="button" class="btn btn-danger" ><i class="bi bi-trash"></i></button></td>
                 </tr>
 
 
 `;
 
 contenedorCarrito.innerHTML = filaDelModal;  
+
+sumaCarro+=elemento.servicio.precioNetoPlan*elemento.cantidad;
 
 let inputCantidadProducto = document.getElementById(`servicio-cantidad-${elemento.servicio.ID}`);
 
@@ -436,6 +440,15 @@ inputCantidadProducto.onchange = () => {
 
 });
 
+if (elementosCarrito.length == 0){
+  modalFooter.innerHTML = `
+  <th scope="row" colspan="5"> Carrito Vacío - Comience su Compra. </th>
+  `;
+} else{
+  modalFooter.innerHTML = `
+  <th scope="row" colspan="5"> El Total de su Compra es: $${sumaCarro} </th>
+  `;
+}
 
 
 }
