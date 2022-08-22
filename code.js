@@ -134,8 +134,10 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
        let elementoCarrito = new ElementoCarrito(servicio, 1);
        elementosCarrito.push(elementoCarrito) ;
        
-       generarCarrito();  
+         
       }
+      generarCarrito();
+
     }
 
   });
@@ -156,26 +158,29 @@ renderizarPlanesYPushearElementosAlCarrito();
 
   
   let filaDelModal = '';
-
+  contenedorCarrito.innerHTML = '';
+  
   let sumaCarro = 0;
 
  elementosCarrito.forEach((elemento) => {
 
+ let filaDelModal = document.createElement("tr");   
 
- filaDelModal+=`
-                <tr>
+
+ filaDelModal.innerHTML=`
+                
                 <td>${elemento.servicio.id}</td>
                 <td>${elemento.servicio.plan}</td>
-                <td><input id="servicio-cantidad-${elemento.servicio.id}" type="number" value=${elemento.cantidad} min="1" max="1000" step="1"></td>
+                <td><input id="servicio-cantidad-${elemento.servicio.id}" style="width: 50px;" type="number" value=${elemento.cantidad} min="1" max="1000" step="1"></td>
                 <td>${elemento.servicio.precioNetoPlan}</td>
                 <td>${elemento.servicio.precioNetoPlan*elemento.cantidad}</td>
                 <td><button id="servicio-eliminar-${elemento.servicio.id}" type="button" class="btn btn-danger" ><i class="bi bi-trash"></i></button></td>
-                </tr>
+                
 
 
  `;
 
- contenedorCarrito.innerHTML = filaDelModal;  
+ contenedorCarrito.append(filaDelModal);  
 
  sumaCarro+=elemento.cantidad*elemento.servicio.precioNetoPlan;
 
