@@ -1,4 +1,6 @@
 
+
+
 class Cliente {
   constructor (codigoCliente, razonSocial, condicionIva, tipoDePlan){
     this.codigoCliente = codigoCliente;
@@ -15,7 +17,8 @@ class Cliente {
 const cliente1 = new Cliente(1111, "Trebol srl", "Resp. Inscripto", "Intermedio");
 const cliente2 = new Cliente(2222, "Space SA", "Resp. Inscripto", "Premium");
 const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
-  
+
+
 
 
 
@@ -43,9 +46,9 @@ const elementosCarrito = [];
 
 
 class Servicio {
-  constructor (id, plan, descripcion, precioNetoPlan, foto){
+  constructor (id, item, descripcion, precioNetoPlan, foto){
     this.id = id;
-    this.plan = plan;
+    this.item = item;
     this.descripcion = descripcion;
     this.precioNetoPlan = precioNetoPlan;
     this.foto = foto;
@@ -53,25 +56,39 @@ class Servicio {
   }
 }
 
-const planBasico = new Servicio(1, "Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000, "../img/teamwork.jpg");
+const planBasico = new Servicio(1, "Plan Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000, "../img/teamwork.jpg");
 
-const planIntermedio = new Servicio(2, "Intermedio", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables).", 20000, "../img/hands-on-the-table-.jpg");
+const planIntermedio = new Servicio(2, "Plan Intermedio", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables).", 20000, "../img/hands-on-the-table-.jpg");
 
-const planPremium = new Servicio(3, "Premium", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables). Nos ocuparemos de resolver todo lo Laboral (Liquidación de sueldos y jornales, Liquidación de Boletas Sindicales). Por último este servicio Premium incluye además asesoramiento permamente en materia Financiera y Tributaria-Fiscal.", 30000, "../img/financePeopleDesk.jpg");
+const planPremium = new Servicio(3, "Plan Premium", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables). Nos ocuparemos de resolver todo lo Laboral (Liquidación de sueldos y jornales, Liquidación de Boletas Sindicales). Por último este servicio Premium incluye además asesoramiento permamente en materia Financiera y Tributaria-Fiscal.", 30000, "../img/financePeopleDesk.jpg");
+
+const mercadoDeCapitales = new Servicio(4, "Mercado de Capitales", "Acceda a un Informe completo sobre las mejores Opciones y alternativas de inversión." , 35000, "../img/stock-market-Hand.jpg");
+
+const criptoMonedas = new Servicio(5, "Cripto Monedas", "Lo ayudamos a iniciarse y a descubrir todas las oportunidades financieras disponibles en los activos digitales. Conozca toda la Legislación vigente en Cripto Monedas y Billeteras Virtuales.", 40000, "../img/Bitcoins.jpg");
+
+const investigacionDeMercado = new Servicio(6, "Auditoría", "Nuestro equipo de Profesionales analizará en detalle su estrategia corporativa actual, hará un Diagnóstico de la misma y le presentará alternativas de mejora y planes de acción en concreto con respecto a su requerimiento.", 80000, "../img/financeStrategy.jpg");
+
+
+
 
 const servicios = [];
+const informes = [];
 
-const agregarServicios = () => {
+const agregarItems = () => {
 
 servicios.push(planBasico);
 servicios.push(planIntermedio);
 servicios.push(planPremium);
-console.log(servicios);
+informes.push(mercadoDeCapitales);
+informes.push(criptoMonedas);
+informes.push(investigacionDeMercado);
+
+
 
 
 }
 
-agregarServicios();
+agregarItems();
 
 
 
@@ -92,6 +109,7 @@ vaciarConJs();
 // Servicios agregados dinamicamente:
 
 let planesAplicandoForOf = document.getElementById("planesAplicandoForOf");
+let informesAplicandoForOf = document.getElementById("informesAplicandoForOf");
 
 
 
@@ -100,12 +118,12 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
   for (const servicio of servicios) {
   
 
-    planesAplicandoForOf.className = "d-flex justify-content-around";
+    planesAplicandoForOf.className = "d-flex justify-content-evenly";
     planesAplicandoForOf.innerHTML += `
       <div class="card mt-4 mb-4" style="width: 18rem;">
       <img src=${servicio.foto} class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Plan ${servicio.plan}</h5>
+        <h5 class="card-title">${servicio.item}</h5>
         <p class="card-text">${servicio.descripcion}</p>
         <p id="planDinamizado${servicio.id}" class="btn btn-primary">${servicio.precioNetoPlan}</p>
       </div>
@@ -114,6 +132,26 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
 
   }
  
+  for (const servicio of informes) {
+  
+
+    informesAplicandoForOf.className = "d-flex justify-content-evenly";
+    informesAplicandoForOf.innerHTML += `
+      <div class="card mt-4 mb-4" style="width: 18rem;">
+      <img src=${servicio.foto} class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${servicio.item}</h5>
+        <p class="card-text">${servicio.descripcion}</p>
+        <p id="planDinamizado${servicio.id}" class="btn btn-primary">${servicio.precioNetoPlan}</p>
+      </div>
+      </div>
+    `;
+
+  }
+  
+  servicios.push(...informes);
+  
+  
   // Boton que pushea Elementos al Carrito y activa la funcion GenerarCarrito!!
   
   servicios.forEach(servicio => {
@@ -127,10 +165,10 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
      
      if(itemYaExistenteEnCarrito){
        itemYaExistenteEnCarrito.cantidad+=1;
-       confirm(`Usted agregó una unidad adicional al Plan ${servicio.plan}.`);
+       confirm(`Usted agregó una unidad adicional de: ${servicio.item}.`);
      } else {
 
-      confirm(`Usted seleccionó el Plan ${servicio.plan}.`);
+      confirm(`Su servicio: ${servicio.item}, fue agregado al Carrito exitosamente.`);
        
        let elementoCarrito = new ElementoCarrito(servicio, 1);
        elementosCarrito.push(elementoCarrito) ;
@@ -172,7 +210,7 @@ renderizarPlanesYPushearElementosAlCarrito();
                 
               
                 <td>${elemento.servicio.id}</td>
-                <td>${elemento.servicio.plan}</td>
+                <td>${elemento.servicio.item}</td>
                 <td><input id="servicio-cantidad-${elemento.servicio.id}" style="width: 50px;" type="number" value=${elemento.cantidad} min="1" max="1000" step="1"></td>
                 <td>${elemento.servicio.precioNetoPlan}</td>
                 <td>${elemento.servicio.precioNetoPlan*elemento.cantidad}</td>
