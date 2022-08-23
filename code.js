@@ -43,20 +43,21 @@ const elementosCarrito = [];
 
 
 class Servicio {
-  constructor (id, plan, descripcion, precioNetoPlan){
+  constructor (id, plan, descripcion, precioNetoPlan, foto){
     this.id = id;
     this.plan = plan;
     this.descripcion = descripcion;
     this.precioNetoPlan = precioNetoPlan;
+    this.foto = foto;
     
   }
 }
 
-const planBasico = new Servicio(1, "Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000);
+const planBasico = new Servicio(1, "Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000, "../img/teamwork.jpg");
 
-const planIntermedio = new Servicio(2, "Intermedio", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables).", 20000);
+const planIntermedio = new Servicio(2, "Intermedio", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables).", 20000, "../img/hands-on-the-table-.jpg");
 
-const planPremium = new Servicio(3, "Premium", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables). Nos ocuparemos de resolver todo lo Laboral (Liquidación de sueldos y jornales, Liquidación de Boletas Sindicales). Por último este servicio Premium incluye además asesoramiento permamente en materia Financiera y Tributaria-Fiscal.", 30000);
+const planPremium = new Servicio(3, "Premium", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias). Más la Contabilidad de su empresa (Estados Contables, Auditoría Interna y Externa, Certificaciones Contables). Nos ocuparemos de resolver todo lo Laboral (Liquidación de sueldos y jornales, Liquidación de Boletas Sindicales). Por último este servicio Premium incluye además asesoramiento permamente en materia Financiera y Tributaria-Fiscal.", 30000, "../img/financePeopleDesk.jpg");
 
 const servicios = [];
 
@@ -102,7 +103,7 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
     planesAplicandoForOf.className = "d-flex justify-content-around";
     planesAplicandoForOf.innerHTML += `
       <div class="card mt-4 mb-4" style="width: 18rem;">
-      <img src="../img/cup-of-coffee.jpg" class="card-img-top" alt="...">
+      <img src=${servicio.foto} class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Plan ${servicio.plan}</h5>
         <p class="card-text">${servicio.descripcion}</p>
@@ -167,15 +168,16 @@ renderizarPlanesYPushearElementosAlCarrito();
  let filaDelModal = document.createElement("tr");   
 
 
- filaDelModal.innerHTML=`
+ filaDelModal.innerHTML =`
                 
+              
                 <td>${elemento.servicio.id}</td>
                 <td>${elemento.servicio.plan}</td>
                 <td><input id="servicio-cantidad-${elemento.servicio.id}" style="width: 50px;" type="number" value=${elemento.cantidad} min="1" max="1000" step="1"></td>
                 <td>${elemento.servicio.precioNetoPlan}</td>
                 <td>${elemento.servicio.precioNetoPlan*elemento.cantidad}</td>
                 <td><button id="servicio-eliminar-${elemento.servicio.id}" type="button" class="btn btn-danger" ><i class="bi bi-trash"></i></button></td>
-                
+           
 
 
  `;
@@ -244,3 +246,7 @@ function eliminarItem(productoAEliminar) {
   }
   
   //-----------------------------------------------------//
+
+
+  localStorage.setItem("usuario", "Fede Orsi");
+  localStorage.setItem("envío", "true");
