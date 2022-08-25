@@ -107,7 +107,10 @@
 
    </section>
 
-<!-- Button trigger modal -->
+   
+
+
+
 
 
 <!-- Modal -->
@@ -123,7 +126,7 @@
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Plan</th>
+              <th scope="col">Item</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Precio</th>
               <th scope="col">Total item</th>
@@ -143,11 +146,16 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+        <a href="#formasDePago">
         <button type="button" class="btn btn-primary">Cerrar</button>
+        </a>
+        
       </div>
     </div> 
   </div>
 </div>
+
+
 
    <!-- Card BS de prueba en HTML-->
    
@@ -174,6 +182,12 @@
     </section>
 
 
+    <section>
+      <h2 id="formasDePago">Formas de Pago</h2>
+
+    </section>
+
+
   <div>
     <h3 class="h3Titulo text-center mb-5">Servicios Contables</h3>
   </div>
@@ -182,8 +196,10 @@
   <section class="serviciosContables text-center mb-5">
     <div>
     
+    
     <div class="subtituloContainer">
-     <h5 class="subtituloContabilidad margenContabilidadIntegral text-center">
+     <!-- aca apliqué Sweet Alert de Prueba   -->
+      <h5 id="aceptarCarrito" class="subtituloContabilidad margenContabilidadIntegral text-center">
       Contabilidad Integral
      </h5>
     </div>
@@ -303,8 +319,8 @@
 
   </footer>
     
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../code.js"></script>
 </body>
 </html>

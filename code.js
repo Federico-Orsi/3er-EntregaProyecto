@@ -1,22 +1,24 @@
+const elementosCarrito = [];
 
+carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito"));
+console.log(carritoRecuperado);
 
-
-class Cliente {
-  constructor (codigoCliente, razonSocial, condicionIva, tipoDePlan){
-    this.codigoCliente = codigoCliente;
-    this.razonSocial = razonSocial;
-    this.condicionIva = condicionIva;
-    this.tipoDePlan = tipoDePlan;
+// class Cliente {
+//   constructor (codigoCliente, razonSocial, condicionIva, tipoDePlan){
+//     this.codigoCliente = codigoCliente;
+//     this.razonSocial = razonSocial;
+//     this.condicionIva = condicionIva;
+//     this.tipoDePlan = tipoDePlan;
    
-  }
+//   }
 
-}
+// }
 
-// Clientes con datos Hardcodeados:
+// // Clientes con datos Hardcodeados:
 
-const cliente1 = new Cliente(1111, "Trebol srl", "Resp. Inscripto", "Intermedio");
-const cliente2 = new Cliente(2222, "Space SA", "Resp. Inscripto", "Premium");
-const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
+// const cliente1 = new Cliente(1111, "Trebol srl", "Resp. Inscripto", "Intermedio");
+// const cliente2 = new Cliente(2222, "Space SA", "Resp. Inscripto", "Premium");
+// const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
 
 
 
@@ -41,7 +43,7 @@ class ElementoCarrito {
   }
 }
 
-const elementosCarrito = [];
+
 
 
 
@@ -256,10 +258,12 @@ renderizarPlanesYPushearElementosAlCarrito();
   `;
 }
 
+localStorage.setItem("carrito", JSON.stringify(elementosCarrito));
+
 
 }
 
-generarCarrito();  
+
 
 
 // funcion para eliminar elementos del Carrito:
@@ -286,5 +290,26 @@ function eliminarItem(productoAEliminar) {
   //-----------------------------------------------------//
 
 
-  localStorage.setItem("usuario", "Fede Orsi");
+  
   localStorage.setItem("envío", "true");
+
+  let aceptarCarrito = document.getElementById("aceptarCarrito");
+  aceptarCarrito.onclick = () => {
+ 
+
+  // Swal.fire({
+  //   icon: 'success',
+  //   title: 'Gracias por tu Compra',
+  //   text: 'Clickeá debajo para conocer los medios de pago',
+  //   footer: '<a href="#formasDePago">Ir a Pago</a>'
+  // })
+
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Something went wrong!',
+    footer: '<a href="">Why do I have this issue?</a>'
+  })
+
+}
+
