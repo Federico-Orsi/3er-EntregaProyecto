@@ -293,23 +293,56 @@ function eliminarItem(productoAEliminar) {
   
   localStorage.setItem("envío", "true");
 
+  
+  
   let aceptarCarrito = document.getElementById("aceptarCarrito");
   aceptarCarrito.onclick = () => {
  
 
-  // Swal.fire({
-  //   icon: 'success',
-  //   title: 'Gracias por tu Compra',
-  //   text: 'Clickeá debajo para conocer los medios de pago',
-  //   footer: '<a href="#formasDePago">Ir a Pago</a>'
-  // })
+  
 
   Swal.fire({
     icon: 'error',
     title: 'Oops...',
     text: 'Something went wrong!',
-    footer: '<a href="">Why do I have this issue?</a>'
+    footer: '<a href="#quieroInfo">Why do I have this issue?</a>'
   })
 
 }
 
+
+let pruebaSweet = document.getElementById("pruebaSweet");
+  pruebaSweet.onclick = () => {
+
+  Swal.fire({
+  icon: 'success',
+  title: 'Gracias por tu Compra',
+  text: 'Clickeá debajo para conocer los medios de pago',
+  footer: '<a href="#formasDePago">Ir a Pago</a>'
+})
+
+}
+
+let pruebaSwal = document.getElementById("pruebaSwal");
+  pruebaSwal.onclick = () => {
+
+
+Swal.fire({
+  title: '<strong>Gracias<u>por su Compra</u></strong>',
+  icon: 'info',
+  html:
+    'You can use <b>bold text</b>, ' +
+    '<a href="https://www2.personas.santander.com.ar/obp-webapp/angular/#!/login">ver Cuotas</a> ' +
+    'and other HTML tags',
+  showCloseButton: true,
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText:
+    '<i class="fa fa-thumbs-up"></i> Great!',
+  confirmButtonAriaLabel: 'Thumbs up, great!',
+  cancelButtonText:
+    '<i class="fa fa-thumbs-down"></i>',
+  cancelButtonAriaLabel: 'Thumbs down'
+})
+
+}
