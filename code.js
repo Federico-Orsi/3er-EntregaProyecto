@@ -318,7 +318,7 @@ let pruebaSweet = document.getElementById("pruebaSweet");
   icon: 'success',
   title: 'Gracias por tu Compra',
   text: 'Clickeá debajo para conocer los medios de pago',
-  footer: '<a href="#formasDePago">Ir a Pago</a>'
+  footer: '<a href="../secciones/contacto.html">Ir a Pago</a>'
 })
 
 }
@@ -332,7 +332,7 @@ Swal.fire({
   icon: 'info',
   html:
     'You can use <b>bold text</b>, ' +
-    '<a href="https://www2.personas.santander.com.ar/obp-webapp/angular/#!/login">ver Cuotas</a> ' +
+    '<a href="https://federico-orsi.github.io/Simulador-Interactivo/secciones/contacto.html">ver Cuotas</a> ' +
     'and other HTML tags',
   showCloseButton: true,
   showCancelButton: true,
