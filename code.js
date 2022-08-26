@@ -1,3 +1,4 @@
+swalConImg();
 const elementosCarrito = [];
 
 carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito"));
@@ -20,8 +21,19 @@ console.log(carritoRecuperado);
 // const cliente2 = new Cliente(2222, "Space SA", "Resp. Inscripto", "Premium");
 // const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
 
+const swalConImg = () => {
+ 
+  
+  Swal.fire({
+    title: 'Sweet!',
+    text: 'Modal with a custom image.',
+    imageUrl: 'https://unsplash.it/400/200',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })
 
-
+}
 
 
 // Cliente generado de manera dinámica:
@@ -298,15 +310,23 @@ function eliminarItem(productoAEliminar) {
   let aceptarCarrito = document.getElementById("aceptarCarrito");
   aceptarCarrito.onclick = () => {
  
-
+  
+    Swal.fire({
+      title: 'Sweet!',
+      text: 'Modal with a custom image.',
+      imageUrl: 'https://unsplash.it/400/200',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Custom image',
+    })
   
 
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Something went wrong!',
-    footer: '<a href="#quieroInfo">Why do I have this issue?</a>'
-  })
+  // Swal.fire({
+  //   icon: 'error',
+  //   title: 'Oops...',
+  //   text: 'Something went wrong!',
+  //   footer: '<a href="#quieroInfo">Why do I have this issue?</a>'
+  // })
 
 }
 
