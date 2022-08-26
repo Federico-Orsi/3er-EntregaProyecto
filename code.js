@@ -293,6 +293,7 @@ function eliminarItem(productoAEliminar) {
   localStorage.setItem("envío", "true");
 
   
+ 
   
   let aceptarCarrito = document.getElementById("aceptarCarrito");
   aceptarCarrito.onclick = () => {
@@ -330,26 +331,47 @@ let pruebaSweet = document.getElementById("pruebaSweet");
 
 }
 
+
+
 let pruebaSwal = document.getElementById("pruebaSwal");
   pruebaSwal.onclick = () => {
 
 
-Swal.fire({
-  title: '<strong>Gracias<u>por su Compra</u></strong>',
-  icon: 'info',
-  html:
-    'You can use <b>bold text</b>, ' +
-    '<a href="https://federico-orsi.github.io/Simulador-Interactivo/secciones/contacto.html">ver Cuotas</a> ' +
-    'and other HTML tags',
-  showCloseButton: true,
-  showCancelButton: true,
-  focusConfirm: false,
-  confirmButtonText:
-    '<i class="fa fa-thumbs-up"></i> Great!',
-  confirmButtonAriaLabel: 'Thumbs up, great!',
-  cancelButtonText:
-    '<i class="fa fa-thumbs-down"></i>',
-  cancelButtonAriaLabel: 'Thumbs down'
-})
+
+ 
+ Toastify({
+
+  text: "https://images.app.goo.gl/HmdZf7xaD5qwewJ1A   This is a fucking toast maaan!!  " + planBasico.item,
+  
+  duration: 3000
+  
+
+  style: {
+    background: "linear-gradient(to right, #00b09b, #96c93d)",
+  }
+  
+  // destination: "https://github.com/apvarun/toastify-js",
+
+  // avatar:  "https://images.app.goo.gl/HmdZf7xaD5qwewJ1A",
+  
+  }).showToast();
+
+// Swal.fire({
+//   title: '<strong>Gracias<u>por su Compra</u></strong>',
+//   icon: 'info',
+//   html:
+//     'You can use <b>bold text</b>, ' +
+//     '<a href="https://federico-orsi.github.io/Simulador-Interactivo/secciones/contacto.html">ver Cuotas</a> ' +
+//     'and other HTML tags',
+//   showCloseButton: true,
+//   showCancelButton: true,
+//   focusConfirm: false,
+//   confirmButtonText:
+//     '<i class="fa fa-thumbs-up"></i> Great!',
+//   confirmButtonAriaLabel: 'Thumbs up, great!',
+//   cancelButtonText:
+//     '<i class="fa fa-thumbs-down"></i>',
+//   cancelButtonAriaLabel: 'Thumbs down'
+// })
 
 }
