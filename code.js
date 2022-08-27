@@ -166,8 +166,7 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
      
      if(itemYaExistenteEnCarrito){
        itemYaExistenteEnCarrito.cantidad+=1;
-      //  confirm(`Usted agregó una unidad adicional de: ${servicio.item}.`);
-       
+      
        Toastify({
 
         text: `Usted agregó una unidad adicional de: ${servicio.item}.`,
@@ -177,7 +176,9 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
         destination: "https://github.com/apvarun/toastify-js",
         
         
-        avatar: "../img/shopping-cart-svgrepo-com.svg",
+        avatar: "../img/shopping-cart-svgrepo-com(x).svg",
+
+        gravity: `bottom`,
       
         style: {
           background: "linear-gradient(to right, #00b09b, #96c93d)",
@@ -185,8 +186,7 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
         }).showToast();
      } else {
 
-      // confirm(`Su servicio: ${servicio.item}, fue agregado al Carrito exitosamente.`);
-
+      
       Toastify({
 
         text: `Su servicio: ${servicio.item}, fue agregado al Carrito exitosamente.`,
@@ -194,6 +194,8 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
         duration: 3000,
         
         avatar: "../img/shopping-cart-svgrepo-com.svg",
+
+        gravity: `top`,
       
         style: {
           background: "linear-gradient(to right, #00b09b, #96c93d)",
