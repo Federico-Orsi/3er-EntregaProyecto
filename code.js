@@ -166,10 +166,39 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
      
      if(itemYaExistenteEnCarrito){
        itemYaExistenteEnCarrito.cantidad+=1;
-       confirm(`Usted agregó una unidad adicional de: ${servicio.item}.`);
+      //  confirm(`Usted agregó una unidad adicional de: ${servicio.item}.`);
+       
+       Toastify({
+
+        text: `Usted agregó una unidad adicional de: ${servicio.item}.`,
+        
+        duration: 3000,
+        
+        destination: "https://github.com/apvarun/toastify-js",
+        
+        
+        avatar: "../img/shopping-cart-svgrepo-com.svg",
+      
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+        }).showToast();
      } else {
 
-      confirm(`Su servicio: ${servicio.item}, fue agregado al Carrito exitosamente.`);
+      // confirm(`Su servicio: ${servicio.item}, fue agregado al Carrito exitosamente.`);
+
+      Toastify({
+
+        text: `Su servicio: ${servicio.item}, fue agregado al Carrito exitosamente.`,
+        
+        duration: 3000,
+        
+        avatar: "../img/shopping-cart-svgrepo-com.svg",
+      
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+        }).showToast();
        
        let elementoCarrito = new ElementoCarrito(servicio, 1);
        elementosCarrito.push(elementoCarrito) ;
@@ -339,22 +368,7 @@ let pruebaSwal = document.getElementById("pruebaSwal");
 
 
  
- Toastify({
-
-  text: "https://images.app.goo.gl/HmdZf7xaD5qwewJ1A   This is a fucking toast maaan!!  " + planBasico.item,
-  
-  duration: 3000
-  
-
-  style: {
-    background: "linear-gradient(to right, #00b09b, #96c93d)",
-  }
-  
-  // destination: "https://github.com/apvarun/toastify-js",
-
-  // avatar:  "https://images.app.goo.gl/HmdZf7xaD5qwewJ1A",
-  
-  }).showToast();
+ 
 
 // Swal.fire({
 //   title: '<strong>Gracias<u>por su Compra</u></strong>',
