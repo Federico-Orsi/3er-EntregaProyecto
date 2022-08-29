@@ -1,5 +1,7 @@
 const elementosCarrito = [];
 
+
+//  Aqui debajo aplico el Operador AND para el Desafío de Operadores avanzados:
 carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito"));
 console.log(carritoRecuperado);
 
@@ -150,6 +152,7 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
 
   }
   
+  // Aqui debajo aplico el Spread para el Desafío de Operadores avanzados:
   servicios.push(...informes);
   
   
@@ -223,7 +226,7 @@ renderizarPlanesYPushearElementosAlCarrito();
   let contenedorCarrito = document.getElementById("contenedorFilaCarrito");
   let modalFooter = document.getElementById("footerModal");
 
-
+  // Función que genera el Carrito de Compras:
   
   const generarCarrito = () => {
 
@@ -278,15 +281,13 @@ renderizarPlanesYPushearElementosAlCarrito();
 
 });
 
- if(elementosCarrito.length == 0){
-  modalFooter.innerHTML = `
-  <th scope="row" colspan="5"> Carrito Vacío - Comience su Compra. </th>
-  `;
-} else{
-  modalFooter.innerHTML = `
-  <th scope="row" colspan="5"> El Total de su Compra es: $${sumaCarro} </th>
-  `;
-}
+//  Aqui debajo aplico el Ternario para el Desafío de Operadores avanzados:
+
+ elementosCarrito.length == 0 ? modalFooter.innerHTML = `
+ <th scope="row" colspan="5"> Carrito Vacío - Comience su Compra. </th>
+ `  : modalFooter.innerHTML = `
+ <th scope="row" colspan="5"> El Total de su Compra es: $${sumaCarro} </th>
+ `;
 
 localStorage.setItem("carrito", JSON.stringify(elementosCarrito));
 
