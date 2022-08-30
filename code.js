@@ -351,8 +351,8 @@ let pruebaSweet = document.getElementById("pruebaSweet");
   Swal.fire({
   icon: 'success',
   title: 'Gracias por tu Compra',
-  text: 'Clickeá debajo para conocer los medios de pago',
-  footer: '<a href="../secciones/contacto.html">Ir a Pago</a>'
+  text: 'Antes de realizar el Pago, por favor envianos tus Datos de Contacto',
+  footer: '<a href="../secciones/contacto.html">Ir a Formulario</a>'
 })
 
 }
