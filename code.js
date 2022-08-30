@@ -341,13 +341,7 @@ function eliminarItem(productoAEliminar) {
     })
   
 
-  // Swal.fire({
-  //   icon: 'error',
-  //   title: 'Oops...',
-  //   text: 'Something went wrong!',
-  //   footer: '<a href="#quieroInfo">Why do I have this issue?</a>'
-  // })
-
+  
 }
 
 
@@ -366,9 +360,9 @@ let pruebaSweet = document.getElementById("pruebaSweet");
 
 
 let pruebaSwal = document.getElementById("pruebaSwal");
-  pruebaSwal.onclick = () => {
+  pruebaSwal.onmouseover = () => {
 
-
+    
 
  
  
