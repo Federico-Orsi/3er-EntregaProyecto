@@ -29,7 +29,7 @@ const swalConImg = () => {
         
       })
    
-    } 
+    } else {
    
     Swal.fire({
       icon: 'success',
@@ -37,7 +37,7 @@ const swalConImg = () => {
       text: 'A continuación elegí el medio de Pago más conveniente.',
       footer: '<a href="#formasDePago">Ir a Pago</a>'
     })
-   
+  }
   
   }
 
