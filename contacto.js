@@ -14,7 +14,7 @@
   
 //   swalConImg();
   
-  let finalizarCompra = document.getElementById("finalizarCompra");
+  let mailConfirmacion = document.getElementById("mailConfirmacion");
   let inputApellido = document.getElementById("inputAddress");
   let inputNombre = document.getElementById("inputNombre");
   let formulario = document.getElementById("formulario");
@@ -34,13 +34,13 @@
   }
 
   
-  finalizarCompra.onclick = () => {
+  mailConfirmacion.onclick = () => {
 
   Swal.fire({
     icon: 'success',
     title: 'Gracias por enviarnos tus Datos',
-    text: 'A continuación elegí el medio de Pago más conveniente.',
-    footer: '<a href="#formasDePago">Ir a Pago</a>'
+    text: 'Te hemos enviado el detalle de esta compra al e-mail que informaste en el formulario.',
+    // footer: '<a href="#formasDePago">Ir a Pago</a>'
   })
 
   }
