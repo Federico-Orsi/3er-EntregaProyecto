@@ -14,7 +14,7 @@
   
 //   swalConImg();
   
-  
+  let finalizarCompra = document.getElementById("finalizarCompra");
   let inputApellido = document.getElementById("inputAddress");
   let inputNombre = document.getElementById("inputNombre");
   let formulario = document.getElementById("formulario");
@@ -34,8 +34,7 @@
   }
 
   
-  
-  if ((inputApellido.value != "") & (inputNombre.value != "" )) {
+  finalizarCompra.onclick = () => {
 
   Swal.fire({
     icon: 'success',
