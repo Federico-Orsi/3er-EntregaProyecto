@@ -325,28 +325,10 @@ function eliminarItem(productoAEliminar) {
   localStorage.setItem("envío", "true");
 
   
- 
-  
-  let aceptarCarrito = document.getElementById("aceptarCarrito");
-  aceptarCarrito.onclick = () => {
- 
-  
-    Swal.fire({
-      title: 'Sweet!',
-      text: 'Modal with a custom image.',
-      imageUrl: 'https://unsplash.it/400/200',
-      imageWidth: 400,
-      imageHeight: 200,
-      imageAlt: 'Custom image',
-    })
-  
-
-  
-}
 
 
-let pruebaSweet = document.getElementById("pruebaSweet");
-  pruebaSweet.onclick = () => {
+  let confirmarCompra = document.getElementById("confirmarCompra");
+  confirmarCompra.onclick = () => {
 
   Swal.fire({
   icon: 'success',
@@ -359,7 +341,7 @@ let pruebaSweet = document.getElementById("pruebaSweet");
 
 
 
-let pruebaSwal = document.getElementById("pruebaSwal");
+ let pruebaSwal = document.getElementById("pruebaSwal");
   pruebaSwal.onmouseover = () => {
 
     
