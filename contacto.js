@@ -35,6 +35,7 @@
       icon: 'success',
       title: 'Gracias por enviarnos tus Datos',
       text: 'A continuación elegí el medio de Pago más conveniente.',
+      timer: 5000,
       footer: '<a href="#formasDePago">Ir a Pago</a>'
     })
   }
