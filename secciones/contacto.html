@@ -223,16 +223,19 @@
           
           <figure class="figure w-25">
             <img src="../img/Visa_Inc._logoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Visa">
-            <figcaption class="figure-caption">Ver cuotas</figcaption>
+                                               <!-- Boton Trigger Modal -->
+            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalVisa">Ver cuotas</button></figcaption>
           </figure>
 
           <figure class="figure">
             <img src="../img/PayPalSvg.svg" class="figure-img img-fluid rounded" alt="PayPal">
-            <figcaption id="payPal" class="figure-caption">Ver cuotas</figcaption>
+                                               <!-- Boton Trigger Modal -->
+            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalPayPal">Ver cuotas</button></figcaption>
           </figure>
      
           <figure class="figure">
             <img src="../img/MasterCard_LogoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Master">
+                                              <!-- Boton Trigger Modal -->
             <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver cuotas</button></figcaption>
           </figure>
 
@@ -253,17 +256,56 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                  <!-- acá inyecto lo dinámico con JS -->
                   <p id="masterCard"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button id="pagarMaster" type="button" class="btn btn-primary">Pagar</button>
+                  <button id="pagarMaster" type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalVisa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Resumen de su Compra</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- acá inyecto lo dinámico con JS -->
+                  <p id="visa"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="pagarVisa" type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalPayPal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Resumen de su Compra</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- acá inyecto lo dinámico con JS -->
+                  <p id="payPal"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="pagarPayPal" type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
+                </div>
+              </div>
+            </div>
+          </div>
          
         
         
