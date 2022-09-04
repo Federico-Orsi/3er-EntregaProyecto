@@ -330,12 +330,25 @@ function eliminarItem(productoAEliminar) {
   let confirmarCompra = document.getElementById("confirmarCompra");
   confirmarCompra.onclick = () => {
 
+  elementosCarrito.length != 0  &&  
+  
   Swal.fire({
   icon: 'success',
   title: 'Gracias por tu Compra',
   text: 'Antes de realizar el Pago, por favor envianos tus Datos de Contacto',
   footer: '<a href="../secciones/contacto.html">Ir a Formulario</a>'
-})
+});
+
+ elementosCarrito.length == 0  &&  
+
+ Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Debes agregar algún Servicio al Carrito para poder confirmar tu Compra.',
+  
+});
+
+  
 
 }
 

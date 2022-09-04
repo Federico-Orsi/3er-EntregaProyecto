@@ -8,14 +8,34 @@ sumaCarritoRecuperado+=elemento.cantidad*elemento.servicio.precioNetoPlan;
 
 }
 
+// Validación de Formulario con Expresiones Regulares
+
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
   
+  
+
   let mailConfirmacion = document.getElementById("mailConfirmacion");
-  let inputApellido = document.getElementById("inputAddress");
+  let inputApellido = document.getElementById("inputApellido");
   let inputNombre = document.getElementById("inputNombre");
   let formulario = document.getElementById("formulario");
   
+  
+  // inputApellido.onchange = (e) => {
+
+  // expresiones.nombre.test(e.target.value)  &&  console.log("Funciona!!"); 
+  
+  // };
+  
+  
+  
   formulario.onsubmit = (e) => {
-   if ((inputApellido.value == "") || (inputNombre.value == "" )) {
+   if ((expresiones.nombre.test(inputApellido.value) == false) || (expresiones.nombre.test(inputNombre.value) == false )) {
       e.preventDefault();
       Swal.fire({
         icon: 'error',
@@ -23,12 +43,16 @@ sumaCarritoRecuperado+=elemento.cantidad*elemento.servicio.precioNetoPlan;
         text: 'Por favor no olvides completar tu Nombre y Apellido.',
         
       })
-   
+      
+      
     } 
    
   }
-
   
+  let terminos = document.getElementById("gridCheck");
+  
+ 
+
   mailConfirmacion.onclick = () => {
 
   Swal.fire({
@@ -119,3 +143,5 @@ sumaCarritoRecuperado+=elemento.cantidad*elemento.servicio.precioNetoPlan;
         })
     
       }
+
+    
