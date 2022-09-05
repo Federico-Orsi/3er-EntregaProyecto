@@ -26,17 +26,73 @@ const expresiones = {
   let formulario = document.getElementById("formulario");
   
   
-  // inputApellido.onchange = (e) => {
+  // Contenedor de Formas de Pago y Funcion que las hace aparecer en Pantalla!!
+  
+  containerFormasDePago = document.getElementById("containerFormasDePago");
+  
+  mostrarFormasDePago = () => {
 
-  // expresiones.nombre.test(e.target.value)  &&  console.log("Funciona!!"); 
+  containerFormasDePago.innerHTML = `
   
-  // };
+  <section id="formasDePago" class="text-center mt-5 mb-5">
+          <h3>Formas de Pago</h3>
+         <article class="d-flex justify-content-around mt-5">
+          
+          <figure class="figure w-25">
+            <img src="../img/Visa_Inc._logoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Visa">
+                                               <!-- Boton Trigger Modal -->
+            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalVisa">Ver cuotas</button></figcaption>
+          </figure>
+
+          <figure class="figure">
+            <img src="../img/PayPalSvg.svg" class="figure-img img-fluid rounded" alt="PayPal">
+                                               <!-- Boton Trigger Modal -->
+            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalPayPal">Ver cuotas</button></figcaption>
+          </figure>
+     
+          <figure class="figure">
+            <img src="../img/MasterCard_LogoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Master">
+                                              <!-- Boton Trigger Modal -->
+            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver cuotas</button></figcaption>
+          </figure>
+
+          </article>
+          </section>
   
-  
+  `;
+
+
+  }
   
   formulario.onsubmit = (e) => {
-   if ((expresiones.nombre.test(inputApellido.value) == false) || (expresiones.nombre.test(inputNombre.value) == false )) {
-      e.preventDefault();
+   
+    e.preventDefault(); 
+   
+    if ((expresiones.nombre.test(inputApellido.value)) && (expresiones.nombre.test(inputNombre.value))) {
+      formulario.reset();
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Gracias, tus datos se enviaron correctamente.',
+        text: 'Ahora podes elegir tu Forma de Pago más Conveniente.',
+        
+      })
+      
+      botonPago = document.createElement("button");
+      botonPago.innerText = "Ir a Pagos";
+      botonPago.setAttribute("type","button");
+      botonPago.className = "btn btn-primary";
+      
+      tagAaPagos = document.getElementById("tagAaPagos");
+      tagAaPagos.append(botonPago);
+      
+      botonSubmit = document.getElementById("botonSubmit");
+      botonSubmit.remove();
+
+      mostrarFormasDePago();
+
+    } else {
+
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -45,7 +101,11 @@ const expresiones = {
       })
       
       
-    } 
+      
+      
+    }
+
+    
    
   }
   
