@@ -5,36 +5,8 @@ const elementosCarrito = [];
 carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito"));
 console.log(carritoRecuperado);
 
-// class Cliente {
-//   constructor (codigoCliente, razonSocial, condicionIva, tipoDePlan){
-//     this.codigoCliente = codigoCliente;
-//     this.razonSocial = razonSocial;
-//     this.condicionIva = condicionIva;
-//     this.tipoDePlan = tipoDePlan;
-   
-//   }
 
-// }
-
-// // Clientes con datos Hardcodeados:
-
-// const cliente1 = new Cliente(1111, "Trebol srl", "Resp. Inscripto", "Intermedio");
-// const cliente2 = new Cliente(2222, "Space SA", "Resp. Inscripto", "Premium");
-// const cliente3 = new Cliente(3333, "Fabio Tripodi", "Autonomo", "Basico");
-
-
-
-
-// Cliente generado de manera dinámica:
-
-// let codCliente = Number(prompt("Hola, por favor ingrese su Código de cliente."));
-// let razSocial = prompt("Hola, por favor ingrese su Razón Social.");
-// let condIva = prompt("Hola, por favor ingrese su condicion frente al IVA.");
-// let plan = prompt("Hola, por favor ingrese su tipo de plan elegido.");
-
-
-// const nuevoCliente = new Cliente(codCliente, razSocial, condIva, plan);
-
+// Clase Constructora de Elementos a agregar al Carrito:
 
 class ElementoCarrito {
   constructor (servicio, cantidad){
@@ -45,7 +17,7 @@ class ElementoCarrito {
 }
 
 
-
+// Clase Constructora de Servicios:
 
 
 class Servicio {
@@ -58,6 +30,8 @@ class Servicio {
     
   }
 }
+
+// Creacion de cada Servicio (Objeto):
 
 const planBasico = new Servicio(1, "Plan Básico", "Liquidación de Impuestos (IVA, Ing. Brutos, Monotributo e Imp. a las Gcias)." , 10000, "../img/teamwork.jpg");
 
@@ -72,10 +46,12 @@ const criptoMonedas = new Servicio(5, "Cripto Monedas", "Lo ayudamos a iniciarse
 const investigacionDeMercado = new Servicio(6, "Auditoría", "Nuestro equipo de Profesionales analizará en detalle su estrategia corporativa actual, hará un Diagnóstico de la misma y le presentará alternativas de mejora y planes de acción en concreto con respecto a su requerimiento.", 80000, "../img/financeStrategy.jpg");
 
 
-
+// Generacion de arrays vacíos:
 
 const servicios = [];
 const informes = [];
+
+// Función que agrega elementos a estos Arrays:
 
 const agregarItems = () => {
 
@@ -86,16 +62,13 @@ informes.push(mercadoDeCapitales);
 informes.push(criptoMonedas);
 informes.push(investigacionDeMercado);
 
-
-
-
 }
 
 agregarItems();
 
 
 
-
+// Funcion para Ocultar Card del Html: (es la Card que se usó de modelo para Renderizar los Servicios)
 
 const vaciarConJs = () => {
 
@@ -156,10 +129,10 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
   servicios.push(...informes);
   
   
-  // Boton que pushea Elementos al Carrito y activa la funcion GenerarCarrito!!
+ 
   
   servicios.forEach(servicio => {
-    
+     // Boton que pushea Elementos al Carrito y activa la funcion GenerarCarrito!!
     let botonPusheaProducto = document.getElementById(`planDinamizado${servicio.id}`);
 
     botonPusheaProducto.onclick = () => {
@@ -221,7 +194,7 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
 
 renderizarPlanesYPushearElementosAlCarrito();
 
- 
+  // Definición de Variables para Carrito:
 
   let contenedorCarrito = document.getElementById("contenedorFilaCarrito");
   let modalFooter = document.getElementById("footerModal");
@@ -304,28 +277,14 @@ function eliminarItem(productoAEliminar) {
  const itemAEliminar = elementosCarrito.find(elemento => elemento.servicio.id == productoAEliminar.servicio.id);
  const indice = elementosCarrito.indexOf(itemAEliminar);
  elementosCarrito.splice(indice, 1);
-
-
-
-  // Julio aquí debajo esta la forma que nos explicaste para eliminar elementos del Carro, la cual no me funcionó. Me funcionó mejor con el IndexOf, pero de esta manera tampoco me termina de funcionar perfectamente por el momento.
-  
-  // const elementosAMantener = elementosCarrito.filter((elemento) => elemento.servicio.id != productoAEliminar.servicio.id);
-  
-               
-  //  elementosCarrito.length == 0 ;
-  
-  // const elementosCarrito = elementosAMantener.forEach(elemento => elementosCarrito.push(elemento));
-  
-  }
-  
-  //-----------------------------------------------------//
-
+}
 
   
-  localStorage.setItem("envío", "true");
+//  Prueba para el localStorage:
+ localStorage.setItem("envío", "true");
 
   
-
+//  Evento de Click que Permite avanzar en la Compra solo si el Carrito tiene agregado al menos 1 item:
 
   let confirmarCompra = document.getElementById("confirmarCompra");
   confirmarCompra.onclick = () => {
@@ -354,32 +313,6 @@ function eliminarItem(productoAEliminar) {
 
 
 
- let pruebaSwal = document.getElementById("pruebaSwal");
-  pruebaSwal.onmouseover = () => {
-
-    
-
  
- 
-
-// Swal.fire({
-//   title: '<strong>Gracias<u>por su Compra</u></strong>',
-//   icon: 'info',
-//   html:
-//     'You can use <b>bold text</b>, ' +
-//     '<a href="https://federico-orsi.github.io/Simulador-Interactivo/secciones/contacto.html">ver Cuotas</a> ' +
-//     'and other HTML tags',
-//   showCloseButton: true,
-//   showCancelButton: true,
-//   focusConfirm: false,
-//   confirmButtonText:
-//     '<i class="fa fa-thumbs-up"></i> Great!',
-//   confirmButtonAriaLabel: 'Thumbs up, great!',
-//   cancelButtonText:
-//     '<i class="fa fa-thumbs-down"></i>',
-//   cancelButtonAriaLabel: 'Thumbs down'
-// })
-
-}
 
 

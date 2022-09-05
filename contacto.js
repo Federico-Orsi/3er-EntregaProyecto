@@ -1,3 +1,5 @@
+// Aqui traigo el Carrito que se generó en la Sección Contabilidad, utilizando LocalStorage:
+
 carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito"));
 
 let sumaCarritoRecuperado = 0 ;
@@ -19,7 +21,7 @@ const expresiones = {
 	numeros: /^\d{4,10}$/ // 7 a 14 numeros.
 }
   
-  
+  // Variables del Formulario:
 
   let mailConfirmacion = document.getElementById("mailConfirmacion");
   let inputApellido = document.getElementById("inputApellido");
@@ -28,6 +30,23 @@ const expresiones = {
   let inputDireccion = document.getElementById("direccion");
   let inputCiudad = document.getElementById("inputCity");
   let inputZipCode = document.getElementById("inputZipCode");
+  
+  
+  // Evento OnClick para Confirmación de la Compra:
+  
+  mailConfirmacion.onclick = () => {
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Gracias por enviarnos tus Datos',
+      text: 'Te hemos enviado el detalle de esta compra al e-mail que informaste en el formulario.',
+      
+    })
+  
+    }
+  
+  
+  // Eventos OnInput del Formulario:
   
   inputApellido.oninput = () => {
 
@@ -121,6 +140,9 @@ inputZipCode.oninput = () => {
 
 
   }
+
+
+  // OnSubmit Formulario:
   
   formulario.onsubmit = (e) => {
    
@@ -159,28 +181,14 @@ inputZipCode.oninput = () => {
       })
       
       
-      
-      
     }
-
-    
-   
   }
   
-  let terminos = document.getElementById("gridCheck");
+  // let terminos = document.getElementById("gridCheck");
   
  
-
-  mailConfirmacion.onclick = () => {
-
-  Swal.fire({
-    icon: 'success',
-    title: 'Gracias por enviarnos tus Datos',
-    text: 'Te hemos enviado el detalle de esta compra al e-mail que informaste en el formulario.',
-    
-  })
-
-  }
+ 
+  // Info a mostrar dinamicamente en las Tarjetas:
 
   const dinamizarMasterCard = () => {
 
