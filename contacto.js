@@ -11,11 +11,12 @@ sumaCarritoRecuperado+=elemento.cantidad*elemento.servicio.precioNetoPlan;
 // Validación de Formulario con Expresiones Regulares
 
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	domicilio: /^[a-zA-ZÀ-ÿ0-9\s\_\-]{1,30}$/, // Letras, numeros, guion y guion_bajo
+	ZipCode: /^[A-Z0-9]{4,8}$/,
+  nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+	numeros: /^\d{4,10}$/ // 7 a 14 numeros.
 }
   
   
@@ -24,9 +25,66 @@ const expresiones = {
   let inputApellido = document.getElementById("inputApellido");
   let inputNombre = document.getElementById("inputNombre");
   let formulario = document.getElementById("formulario");
+  let inputDireccion = document.getElementById("direccion");
+  let inputCiudad = document.getElementById("inputCity");
+  let inputZipCode = document.getElementById("inputZipCode");
   
+  inputApellido.oninput = () => {
+
+  if ((expresiones.nombre.test(inputApellido.value) == false)) {
+
+    inputApellido.style.color = "red";
+  } else {
+
+    inputApellido.style.color = "black";
+  }
+}
   
-  // Contenedor de Formas de Pago y Funcion que las hace aparecer en Pantalla!!
+inputNombre.oninput = () => {
+
+  if ((expresiones.nombre.test(inputNombre.value) == false)) {
+
+    inputNombre.style.color = "red";
+  } else {
+
+    inputNombre.style.color = "black";
+  }
+}  
+  
+inputDireccion.oninput = () => {
+
+  if ((expresiones.domicilio.test(inputDireccion.value) == false)) {
+
+    inputDireccion.style.color = "red";
+  } else {
+
+    inputDireccion.style.color = "black";
+  }
+}  
+
+inputCiudad.oninput = () => {
+
+  if ((expresiones.nombre.test(inputCiudad.value) == false)) {
+
+    inputCiudad.style.color = "red";
+  } else {
+
+    inputCiudad.style.color = "black";
+  }
+}  
+
+inputZipCode.oninput = () => {
+
+  if ((expresiones.ZipCode.test(inputZipCode.value) == false)) {
+
+    inputZipCode.style.color = "red";
+  } else {
+
+    inputZipCode.style.color = "black";
+  }
+}  
+
+// Contenedor de Formas de Pago y Funcion que las hace aparecer en Pantalla!!
   
   containerFormasDePago = document.getElementById("containerFormasDePago");
   
@@ -68,7 +126,7 @@ const expresiones = {
    
     e.preventDefault(); 
    
-    if ((expresiones.nombre.test(inputApellido.value)) && (expresiones.nombre.test(inputNombre.value))) {
+    if ((expresiones.nombre.test(inputApellido.value)) && (expresiones.nombre.test(inputNombre.value)) && (expresiones.domicilio.test(inputDireccion.value)) && (expresiones.nombre.test(inputCiudad.value)) && (expresiones.ZipCode.test(inputZipCode.value))) {
       formulario.reset();
 
       Swal.fire({
@@ -96,7 +154,7 @@ const expresiones = {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Por favor no olvides completar tu Nombre y Apellido.',
+        text: 'Por favor debes completar todos los Inputs correctamente.',
         
       })
       

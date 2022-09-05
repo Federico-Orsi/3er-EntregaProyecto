@@ -84,25 +84,20 @@ body {
     height: 100%;
     width: 30%;
   }
-
   .visibility {
     visibility: visible;
     display: unset;
   }
-
   .footerInfo {
     font-size: small;
   }
-
   .marginNosotrosMobile {
     margin-left: 6%;
   }
-
   .ocultarEnTablet {
     visibility: hidden;
     display: none;
   }
-
   .whatsappFooter {
     height: 40px;
     width: 40px;
@@ -207,36 +202,29 @@ body {
     margin-top: 160px;
     margin-bottom: 70px;
   }
-
   .servicios {
     margin: 3px;
     width: 226px;
   }
-
   .servicios:hover {
     transform: scale(110%);
     transition: all 1s;
   }
-
   .divSegundaCard {
     margin-top: 0;
     margin-bottom: 0;
   }
-
   .serviciosContables {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-
   .margenContabilidadIntegral {
     margin-right: 10%;
   }
-
   .containerOrgEmpresarial {
     margin-top: 0%;
   }
-
   .info {
     background-color: rgb(13, 167, 13);
     color: #fff;
@@ -275,7 +263,6 @@ body {
     margin: 3px;
     width: 300px;
   }
-
   .info {
     background-color: rgb(13, 167, 13);
     color: #fff;
@@ -320,12 +307,10 @@ body {
     display: flex;
     flex-direction: row;
   }
-
   .ubicacion {
     text-align: left;
     margin-right: 17px;
   }
-
   .nuestrasOficinas {
     width: 520px;
     margin-left: 0;
@@ -337,7 +322,6 @@ body {
     text-align: left;
     margin-right: 125px;
   }
-
   .nuestrasOficinas {
     width: 600px;
     height: 600px;
@@ -414,7 +398,6 @@ body {
     margin-left: 0%;
     text-align: center;
   }
-
   .subtituloCripto, .subtituloCripto-2 {
     margin-left: 0;
     width: 23%;
@@ -424,52 +407,42 @@ body {
   .img-carrousel {
     height: 400px;
   }
-
   .subtituloCripto-2 {
     margin-left: -1%;
   }
-
   .grids {
     display: grid;
     justify-content: space-around;
     margin-top: 4%;
     grid-template-areas: "cripto video wallet";
   }
-
   .cripto {
     grid-area: cripto;
   }
-
   .videoFinanzas {
     grid-area: video;
   }
-
   .e-wallet {
     grid-area: wallet;
   }
-
   .videoCripto {
     margin-left: 0%;
     width: 100%;
   }
-
   .videoFinanzas {
     margin-left: 3%;
     margin-right: 3%;
   }
-
   .paddingMobile {
     margin-right: 5%;
     margin-left: 2%;
     margin-top: 3%;
     text-align: center;
   }
-
   .subtituloCripto, .subtituloCripto-2 {
     margin-left: -1%;
     width: 50%;
   }
-
   .divSubtitulo {
     margin-bottom: 3%;
   }
@@ -508,7 +481,6 @@ body {
     background-attachment: fixed;
     background-size: 100vw;
   }
-
   .tituloIndex {
     margin-top: 1%;
     margin-left: 24%;
@@ -569,31 +541,25 @@ body {
     display: flex;
     flex-direction: row;
   }
-
   #imgTablet {
     width: 50%;
   }
-
   .figcaption {
     margin-left: 8%;
     text-align: unset;
   }
-
   .iconDiv {
     margin-left: 5%;
   }
-
   .iconDivCentral {
     margin-top: 0;
     margin-bottom: 0;
   }
-
   .textNosotros {
     padding-left: 2%;
     padding-right: 2%;
     text-align: unset;
   }
-
   .displayServicios {
     display: flex;
     flex-direction: row;
