@@ -312,7 +312,38 @@ function eliminarItem(productoAEliminar) {
 }
 
 
+// GET API para mostrar info del Dolar en tiempo Real!!
+
+ let dolarOficial = document.getElementById("dolarOficial");
+ let tituloDolarOficial = document.getElementById("tituloDolarOficial");
+ let dolarBlue = document.getElementById("dolarBlue");
+ let contenedorDolarOficial = document.getElementById("contenedorDolarOficial");
+ let contenedorDolarBlue = document.getElementById("contenedorDolarBlue");
+ contenedorDolarOficial.style.background = "#566e74"; 
+ contenedorDolarOficial.style.color = "white";
+ contenedorDolarBlue.style.background = "#566e74"; 
+ contenedorDolarBlue.style.color = "white";
 
  
+ const mostrarDolar = () => {
 
+  fetch("https://api.bluelytics.com.ar/v2/latest")
+ 
+  .then(response => response.json())
+  .then(dolar => {
+   
+
+   dolarOficial.innerHTML = `
+   Compra: $${dolar.oficial.value_buy} - Venta: $${dolar.oficial.value_sell} 
+   `;
+   
+   dolarBlue.innerHTML = `
+   Compra: $${dolar.blue.value_buy} - Venta: $${dolar.blue.value_sell}`;
+
+  })
+
+
+}
+
+mostrarDolar();
 
