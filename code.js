@@ -1,5 +1,11 @@
 const elementosCarrito = [];
 
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
+
 
 //  Aqui debajo aplico el Operador AND para el Desafío de Operadores avanzados:
 carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito"));
@@ -96,17 +102,22 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
 
     planesAplicandoForOf.className = "d-flex justify-content-evenly";
     planesAplicandoForOf.innerHTML += `
-      <div class="card mt-4 mb-4" style="width: 18rem;">
+    <div class="card mt-4 mb-4" style="width: 18rem;">
       <img src=${servicio.foto} class="card-img-top" alt="...">
-      <div class="card-body">
+      <div class="card-body text-center">
         <h5 class="card-title">${servicio.item}</h5>
         <p class="card-text">${servicio.descripcion}</p>
-        <p id="planDinamizado${servicio.id}" class="btn btn-primary">${servicio.precioNetoPlan}</p>
+        <div class="d-flex justify-content-around mt-4">
+           <p style="cursor: default;" class="btn btn-secondary">$ ${servicio.precioNetoPlan}</p>
+           <p id="planDinamizado${servicio.id}" class="btn btn-primary">Agregar</p>
+        </div>
       </div>
-      </div>
+    </div>
     `;
-
+    
   }
+
+
  
   for (const servicio of informes) {
   
@@ -115,14 +126,17 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
     informesAplicandoForOf.innerHTML += `
       <div class="card mt-4 mb-4" style="width: 18rem;">
       <img src=${servicio.foto} class="card-img-top" alt="...">
-      <div class="card-body">
+      <div class="card-body text-center">
         <h5 class="card-title">${servicio.item}</h5>
         <p class="card-text">${servicio.descripcion}</p>
-        <p id="planDinamizado${servicio.id}" class="btn btn-primary">${servicio.precioNetoPlan}</p>
+        <div class="d-flex justify-content-around mt-4">
+           <p style="cursor: default ;" class="btn btn-secondary">$ ${servicio.precioNetoPlan}</p>
+           <p id="planDinamizado${servicio.id}" class="btn btn-primary">Agregar</p>
+        </div>
       </div>
       </div>
     `;
-
+      
   }
   
   // Aqui debajo aplico el Spread para el Desafío de Operadores avanzados:
@@ -194,7 +208,9 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
 
 renderizarPlanesYPushearElementosAlCarrito();
 
-  // Definición de Variables para Carrito:
+ 
+
+// Definición de Variables para Carrito:
 
   let contenedorCarrito = document.getElementById("contenedorFilaCarrito");
   let modalFooter = document.getElementById("footerModal");
@@ -293,8 +309,8 @@ function eliminarItem(productoAEliminar) {
   
   Swal.fire({
   icon: 'success',
-  title: 'Gracias por tu Compra',
-  text: 'Antes de realizar el Pago, por favor envianos tus Datos de Contacto',
+  title: 'Gracias por tu Confirmación.',
+  text: 'Para finalizar tu Compra, por favor completa el Formulario haciendo Click aqui debajo.',
   footer: '<a href="../secciones/contacto.html">Ir a Formulario</a>'
 });
 
@@ -314,6 +330,8 @@ function eliminarItem(productoAEliminar) {
 
 // GET API para mostrar info del Dolar en tiempo Real!!
 
+//  Declaración de Variables y estilos a nivel Global:
+
  let dolarOficial = document.getElementById("dolarOficial");
  let tituloDolarOficial = document.getElementById("tituloDolarOficial");
  let dolarBlue = document.getElementById("dolarBlue");
@@ -324,6 +342,7 @@ function eliminarItem(productoAEliminar) {
  contenedorDolarBlue.style.background = "#566e74"; 
  contenedorDolarBlue.style.color = "white";
 
+//  Funcion para Mostrar el Dolar:
  
  const mostrarDolar = () => {
 
@@ -347,3 +366,13 @@ function eliminarItem(productoAEliminar) {
 
 mostrarDolar();
 
+// Aqui le estoy quitando el Pointer a las Cards creadas con CSS: (ya que las mismas no ejecutan ninguna acción al clickearlas)
+
+let impuestosQuitarPointer = document.getElementById("impuestosQuitarPointer"); 
+impuestosQuitarPointer.style.cursor = "default";
+
+let laboralQuitarPointer = document.getElementById("laboralQuitarPointer"); 
+laboralQuitarPointer.style.cursor = "default";
+
+let contabilidadQuitarPointer = document.getElementById("contabilidadQuitarPointer"); 
+contabilidadQuitarPointer.style.cursor = "default";

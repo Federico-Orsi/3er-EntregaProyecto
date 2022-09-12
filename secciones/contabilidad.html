@@ -80,7 +80,7 @@
     </section>
    
     <section class="serviciosContainer d-flex justify-content-around mt-5">
-      <div class="servicios">
+      <div id="impuestosQuitarPointer" class="servicios">
        <h2>Impuestos</h2>
        <p class="separador">____</p>
        <p class="primerP">IVA</p>
@@ -92,7 +92,7 @@
        
       </div>
       
-      <div id="pruebaSwal" class="servicios divSegundaCard">
+      <div id="contabilidadQuitarPointer" class="servicios divSegundaCard">
           <h2>Contabilidad</h2>
           <p class="separador">____</p>
       <p class="primerP paddingP" id="pContabilidad">Estados Contables, confección y presentación</p>
@@ -102,7 +102,7 @@
       <p class="paddingP">(Certificación de ingresos, ventas, manifestaciones de bienes y cuentas a cobrar)</p>
       </div>
       
-      <div class="servicios">
+      <div id="laboralQuitarPointer" class="servicios">
           <h2>Laboral</h2>
           <p class="separador">____</p>
           <p class="primerP" id="pLaboral">Liquidación de sueldos y jornales</p>
@@ -158,10 +158,10 @@
         </table>
       </div>
       <div class="modal-footer">
-        <button id="confirmarCompra" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Confirmar Compra</button>
+        <button id="confirmarCompra" type="button" class="btn btn-secondary">Confirmar Compra</button>
         
         
-        <button type="button" class="btn btn-primary">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
         
         
       </div>
@@ -171,7 +171,7 @@
 
 
 
-   <!-- Card BS de prueba en HTML-->
+   <!-- Card BS que usé de modelo para luego inyectarla por JS en el Renderizado de Servicios -->
    
    <article id="dejarVacioConJs" class="d-flex justify-content-around">
     <div class="card mt-4 mb-4" style="width: 18rem;">
@@ -184,7 +184,8 @@
     </div>
    </article>
 
-   <!-- Card BS de prueba dinamizada con JS--> 
+   
+   <!-- Card BS dinamizada con JS--> 
    
 
     <section id="planesAplicandoForOf">
@@ -194,8 +195,8 @@
     <section id="informesAplicandoForOf">
 
     </section>
-
-
+    
+    
   <div>
     <h3 class="h3Titulo text-center mb-5">Servicios Contables</h3>
   </div>

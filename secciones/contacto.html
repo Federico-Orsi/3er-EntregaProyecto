@@ -75,22 +75,27 @@
               <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">E-mail</label>
                 <input type="email" class="form-control" id="inputEmail4">
+                <p id="comentarioErrorMail">*</p>
               </div>
               <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="inputNombre">
+                <input type="text" data-bs-toggle="popover" data-bs-content="Este Campo solo admite Letras, Espacios y Guiones" class="form-control" id="inputNombre">
+                <p id="comentarioErrorNombre">*</p>
               </div>
               <div class="col-12">
                 <label for="inputApellido" class="form-label">Apellido</label>
                 <input type="text" class="form-control" id="inputApellido">
+                <p id="comentarioErrorApellido">*</p> 
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label">Dirección</label>
                 <input type="text" class="form-control" id="direccion">
+                <p id="comentarioErrorDireccion">*</p>
               </div>
               <div class="col-md-6">
                 <label for="inputCity" class="form-label">Ciudad</label>
                 <input type="text" class="form-control" id="inputCity">
+                <p id="comentarioErrorCiudad"></p>
               </div>
               <div class="col-md-4">
                 <label for="inputState" class="form-label">Provincia</label>
@@ -102,6 +107,7 @@
               <div class="col-md-2">
                 <label for="inputZip" class="form-label">Código Postal</label>
                 <input type="text" class="form-control" id="inputZipCode">
+                <p id="comentarioErrorZipCode">*</p>
               </div>
               <div class="col-12">
                 <div class="form-check">
@@ -111,11 +117,9 @@
                   </label>
                 </div>
               </div>
-              <div class="col-12">
+              <div id="divBotonesSubmit" class="col-12">
                 <button id="botonSubmit" type="submit" class="btn btn-primary">Enviar</button>
-                <button id="mailConfirmacion" type="button" class="btn btn-primary">Quiero confirmación</button>
-                <a id="tagAaPagos" href="#formasDePago"></a>
-  
+                
 
               </div>
             </form>
