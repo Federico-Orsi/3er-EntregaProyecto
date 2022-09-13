@@ -79,7 +79,7 @@
               </div>
               <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Nombre</label>
-                <input type="text" data-bs-toggle="popover" data-bs-content="Este Campo solo admite Letras, Espacios y Guiones" class="form-control" id="inputNombre">
+                <input type="text" class="form-control" id="inputNombre">
                 <p id="comentarioErrorNombre">*</p>
               </div>
               <div class="col-12">
@@ -115,6 +115,7 @@
                   <label class="form-check-label" for="gridCheck">
                     Acepto Términos y Condiciones.
                   </label>
+                  <p id="errorTerminosYCondiciones">*</p>
                 </div>
               </div>
               <div id="divBotonesSubmit" class="col-12">
@@ -226,20 +227,23 @@
 
 
          
-         
+        
           
 
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <!-- Modal Tarjeta MasterCard-->
+          <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> 
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Resumen de su Compra</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <!-- <h5 class="modal-title" id="exampleModalLabel">Resumen de su Compra</h5> -->
+                  <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                  <button id="closeButtonMasterCard" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <!-- acá inyecto lo dinámico con JS -->
                   <p id="masterCard"></p>
+                  <p id="containerTimerMasterCard"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -249,7 +253,7 @@
             </div>
           </div>
 
-          <!-- Modal -->
+          <!-- Modal Tarjeta VISA-->
           <div class="modal fade" id="exampleModalVisa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -269,7 +273,7 @@
             </div>
           </div>
 
-          <!-- Modal -->
+          <!-- Modal Paypal-->
           <div class="modal fade" id="exampleModalPayPal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">

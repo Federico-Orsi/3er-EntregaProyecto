@@ -1,12 +1,5 @@
 const elementosCarrito = [];
 
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
-
-
-
 //  Aqui debajo aplico el Operador AND para el Desafío de Operadores avanzados:
 carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito"));
 console.log(carritoRecuperado);

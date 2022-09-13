@@ -1,9 +1,3 @@
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
-
-
 // Aqui traigo el Carrito que se generó en la Sección Contabilidad, utilizando LocalStorage:
 let carritoRecuperado;
 
@@ -39,6 +33,7 @@ const expresiones = {
   let inputCiudad = document.getElementById("inputCity");
   let inputZipCode = document.getElementById("inputZipCode");
   let inputEmail4 = document.getElementById("inputEmail4");
+  let termsAndConditions = document.getElementById("gridCheck");
   
   // Fetch (POST) Formulario: 
   
@@ -78,7 +73,39 @@ const expresiones = {
   let comentarioErrorDireccion = document.getElementById("comentarioErrorDireccion");
   let comentarioErrorCiudad = document.getElementById("comentarioErrorCiudad");
   let comentarioErrorZipCode = document.getElementById("comentarioErrorZipCode");
+  let errorTerminosYCondiciones = document.getElementById("errorTerminosYCondiciones");
   
+  
+  termsAndConditions.onclick = () => {
+   
+  if (termsAndConditions.checked == false) {
+    
+    errorTerminosYCondiciones.style.color = "red";
+    errorTerminosYCondiciones.innerText = "*Es Obligatorio que Aceptes los Términos y Condiciones";
+
+  } else {
+    errorTerminosYCondiciones.innerText = "";
+
+  }
+  }
+  
+  let botonSubmit = document.getElementById("botonSubmit");
+  botonSubmit.onmouseover = () => {
+
+   if (termsAndConditions.checked == false) {
+    errorTerminosYCondiciones.style.color = "red";
+    errorTerminosYCondiciones.innerText = "*Es Obligatorio que Aceptes los Términos y Condiciones";
+   } 
+  }
+
+  botonSubmit.onmouseout = () => {
+
+   if (termsAndConditions.checked == false) {
+    errorTerminosYCondiciones.style.color = "red";
+    errorTerminosYCondiciones.innerText = "*";
+   } 
+  }
+
   // Eventos OnInput del Formulario:
   
   inputEmail4.oninput = () => {
@@ -194,25 +221,23 @@ inputZipCode.oninput = () => {
           <figure class="figure">
             <img src="../img/MasterCard_LogoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Master">
                                               <!-- Boton Trigger Modal -->
-            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver cuotas</button></figcaption>
+            <figcaption class="figure-caption"><button id="triggerTimerMasterCard" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver cuotas</button></figcaption>
           </figure>
 
           </article>
           </section>
   
   `;
-
-
   }
-
-
+  
+  
   // OnSubmit Formulario:
   
   formulario.onsubmit = (e) => {
    
     e.preventDefault(); 
    
-    if ((expresiones.nombre.test(inputApellido.value)) && (expresiones.nombre.test(inputNombre.value)) && (expresiones.domicilio.test(inputDireccion.value)) && (expresiones.ciudad.test(inputCiudad.value)) && (expresiones.ZipCode.test(inputZipCode.value)) && (expresiones.correo.test(inputEmail4.value)) ) {
+    if ((expresiones.nombre.test(inputApellido.value)) && (expresiones.nombre.test(inputNombre.value)) && (expresiones.domicilio.test(inputDireccion.value)) && (expresiones.ciudad.test(inputCiudad.value)) && (expresiones.ZipCode.test(inputZipCode.value)) && (expresiones.correo.test(inputEmail4.value)) && (termsAndConditions.checked) ) {
       enviarAJsonPlaceHolder();
       formulario.reset();
 
@@ -259,6 +284,7 @@ inputZipCode.oninput = () => {
     }
 
     mostrarFormasDePago();
+    dispararTimerPagos();
 
     } else {
 
@@ -273,15 +299,59 @@ inputZipCode.oninput = () => {
     }
   }
   
+  let tiempo;
+  let timerCompra;
   
+  const dispararTimerPagos = () =>{
+
+  let triggerTimerMasterCard =  document.getElementById("triggerTimerMasterCard");
+  triggerTimerMasterCard.onclick = () => {
+  
+  tiempo = 15;
+  let containerTimerMasterCard = document.getElementById("containerTimerMasterCard");
+  
+  let timerCompra = setInterval( () =>{
+  containerTimerMasterCard.innerHTML =`Te quedan ${tiempo} segundos para finalizar tu compra.`;
+  tiempo--;
+  
+  let closeButtonMasterCard = document.getElementById("closeButtonMasterCard");
+  closeButtonMasterCard.onclick = () =>{
+  clearInterval(timerCompra);
+  console.log("cerré modal");
+ }
+ 
+ let pagarMaster = document.getElementById("pagarMaster");
+  pagarMaster.onclick = () => {
+    clearInterval(timerCompra);
+    triggerTimerMasterCard.remove();
+    Swal.fire({
+      icon: 'success',
+      title: 'El Pago fue realizado con Éxito!!',
+      text: 'Gracias por tu Compra.',
+      
+    })
+
+  }
+  
+  if (tiempo == 0) {
+    clearInterval(timerCompra);
+    containerTimerMasterCard.innerHTML = "";
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Se te acabó el tiempo. Si quieres utilizar este medio de Pago, debes Reiniciar la Compra y cargar el Formulario nuevamente. Muchas Gracias.',
+      
+    })
+    pagarMaster.remove();
+    triggerTimerMasterCard.remove();
+  } 
+  
+ } ,1000);
+}
+}  
    
-  
-  
-  // let terminos = document.getElementById("gridCheck");
-  
- 
- 
   // Info a mostrar dinamicamente en las Tarjetas:
+  
 
   const dinamizarMasterCard = () => {
 
@@ -292,22 +362,13 @@ inputZipCode.oninput = () => {
   <br/>
   <br/>
   <strong>Con MasterCard aprovechá 6 cuotas sin interés.</strong>`;
-
-  }
+  
+  
+    }
 
   dinamizarMasterCard();
-
-  let pagarMaster = document.getElementById("pagarMaster");
-  pagarMaster.onclick = () => {
-
-    Swal.fire({
-      icon: 'success',
-      title: 'El Pago fue realizado con Éxito!!',
-      text: 'Gracias por tu Compra.',
-      
-    })
-
-  }
+  
+  
 
   const dinamizarPayPal = () => {
 
@@ -363,4 +424,4 @@ inputZipCode.oninput = () => {
     
       }
 
-    
+      
