@@ -209,13 +209,13 @@ inputZipCode.oninput = () => {
           <figure class="figure w-25">
             <img src="../img/Visa_Inc._logoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Visa">
                                                <!-- Boton Trigger Modal -->
-            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalVisa">Ver cuotas</button></figcaption>
+            <figcaption class="figure-caption"><button id="triggerTimerVisa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropVisa">Ver cuotas</button></figcaption>
           </figure>
 
           <figure class="figure">
             <img src="../img/PayPalSvg.svg" class="figure-img img-fluid rounded" alt="PayPal">
                                                <!-- Boton Trigger Modal -->
-            <figcaption class="figure-caption"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalPayPal">Ver cuotas</button></figcaption>
+            <figcaption class="figure-caption"><button id="triggerTimerPayPal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropPayPal">Ver cuotas</button></figcaption>
           </figure>
      
           <figure class="figure">
@@ -239,16 +239,16 @@ inputZipCode.oninput = () => {
    
     if ((expresiones.nombre.test(inputApellido.value)) && (expresiones.nombre.test(inputNombre.value)) && (expresiones.domicilio.test(inputDireccion.value)) && (expresiones.ciudad.test(inputCiudad.value)) && (expresiones.ZipCode.test(inputZipCode.value)) && (expresiones.correo.test(inputEmail4.value)) && (termsAndConditions.checked) ) {
       enviarAJsonPlaceHolder();
-      formulario.reset();
-
+      
       Swal.fire({
         icon: 'success',
-        title: 'Gracias, tus datos se enviaron correctamente.',
+        title: 'Gracias ' + inputNombre.value + ', tus datos se enviaron correctamente.',
         text: 'Ahora podes elegir tu Forma de Pago más Conveniente.',
         
       })
 
-      
+      formulario.reset();
+
       
       // Creación de Boton para realizar Pago:
       botonPago = document.createElement("button");
@@ -284,7 +284,9 @@ inputZipCode.oninput = () => {
     }
 
     mostrarFormasDePago();
-    dispararTimerPagos();
+    dispararTimerPagosMasterCard();
+    dispararTimerPagosVisa();
+    dispararTimerPagosPayPal();
 
     } else {
 
@@ -299,15 +301,16 @@ inputZipCode.oninput = () => {
     }
   }
   
+  // Sección Timers Tarjetas:
   let tiempo;
   let timerCompra;
-  
-  const dispararTimerPagos = () =>{
+ // Funcion que dispara el Timer de MasterCard:
+  const dispararTimerPagosMasterCard = () =>{
 
   let triggerTimerMasterCard =  document.getElementById("triggerTimerMasterCard");
   triggerTimerMasterCard.onclick = () => {
   
-  tiempo = 15;
+  tiempo = 60;
   let containerTimerMasterCard = document.getElementById("containerTimerMasterCard");
   
   let timerCompra = setInterval( () =>{
@@ -317,7 +320,6 @@ inputZipCode.oninput = () => {
   let closeButtonMasterCard = document.getElementById("closeButtonMasterCard");
   closeButtonMasterCard.onclick = () =>{
   clearInterval(timerCompra);
-  console.log("cerré modal");
  }
  
  let pagarMaster = document.getElementById("pagarMaster");
@@ -330,7 +332,11 @@ inputZipCode.oninput = () => {
       text: 'Gracias por tu Compra.',
       
     })
+} 
 
+  let cancelarMaster = document.getElementById("cancelarMaster");
+  cancelarMaster.onclick = () =>{
+  clearInterval(timerCompra);
   }
   
   if (tiempo == 0) {
@@ -349,10 +355,113 @@ inputZipCode.oninput = () => {
  } ,1000);
 }
 }  
-   
-  // Info a mostrar dinamicamente en las Tarjetas:
-  
 
+// Funcion que dispara el Timer de Visa:
+const dispararTimerPagosVisa = () =>{
+
+  let triggerTimerVisa =  document.getElementById("triggerTimerVisa");
+  triggerTimerVisa.onclick = () => {
+  
+  tiempo = 60;
+  let containerTimerVisa = document.getElementById("containerTimerVisa");
+  
+  let timerCompra = setInterval( () =>{
+  containerTimerVisa.innerHTML =`Te quedan ${tiempo} segundos para finalizar tu compra.`;
+  tiempo--;
+  
+  let closeButtonVisa = document.getElementById("closeButtonVisa");
+  closeButtonVisa.onclick = () =>{
+  clearInterval(timerCompra);
+ }
+ 
+ let pagarVisa = document.getElementById("pagarVisa");
+  pagarVisa.onclick = () => {
+    clearInterval(timerCompra);
+    triggerTimerVisa.remove();
+    Swal.fire({
+      icon: 'success',
+      title: 'El Pago fue realizado con Éxito!!',
+      text: 'Gracias por tu Compra.',
+      
+    })
+} 
+
+  let cancelarVisa = document.getElementById("cancelarVisa");
+  cancelarVisa.onclick = () =>{
+  clearInterval(timerCompra);
+  }
+  
+  if (tiempo == 0) {
+    clearInterval(timerCompra);
+    containerTimerVisa.innerHTML = "";
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Se te acabó el tiempo. Si quieres utilizar este medio de Pago, debes Reiniciar la Compra y cargar el Formulario nuevamente. Muchas Gracias.',
+      
+    })
+    pagarVisa.remove();
+    triggerTimerVisa.remove();
+  } 
+  
+ } ,1000);
+}
+}  
+
+// Funcion que dispara el Timer de PayPal:
+const dispararTimerPagosPayPal = () =>{
+
+  let triggerTimerPayPal =  document.getElementById("triggerTimerPayPal");
+  triggerTimerPayPal.onclick = () => {
+  
+  tiempo = 60;
+  let containerTimerPayPal = document.getElementById("containerTimerPayPal");
+  
+  let timerCompra = setInterval( () =>{
+  containerTimerPayPal.innerHTML =`Te quedan ${tiempo} segundos para finalizar tu compra.`;
+  tiempo--;
+  
+  let closeButtonPayPal = document.getElementById("closeButtonPayPal");
+  closeButtonPayPal.onclick = () =>{
+  clearInterval(timerCompra);
+ }
+ 
+ let pagarPayPal = document.getElementById("pagarPayPal");
+  pagarPayPal.onclick = () => {
+    clearInterval(timerCompra);
+    triggerTimerPayPal.remove();
+    Swal.fire({
+      icon: 'success',
+      title: 'El Pago fue realizado con Éxito!!',
+      text: 'Gracias por tu Compra.',
+      
+    })
+} 
+
+  let cancelarPayPal = document.getElementById("cancelarPayPal");
+  cancelarPayPal.onclick = () =>{
+  clearInterval(timerCompra);
+  }
+  
+  if (tiempo == 0) {
+    clearInterval(timerCompra);
+    containerTimerPayPal.innerHTML = "";
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Se te acabó el tiempo. Si quieres utilizar este medio de Pago, debes Reiniciar la Compra y cargar el Formulario nuevamente. Muchas Gracias.',
+      
+    })
+    pagarPayPal.remove();
+    triggerTimerPayPal.remove();
+  } 
+  
+ } ,1000);
+}
+}  
+  
+// Info a mostrar dinamicamente en las Tarjetas:
+  
   const dinamizarMasterCard = () => {
 
   let masterCard = document.getElementById("masterCard");

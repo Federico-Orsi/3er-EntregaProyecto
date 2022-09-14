@@ -231,22 +231,21 @@
           
 
           <!-- Modal Tarjeta MasterCard-->
-          <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+          
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> 
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <!-- <h5 class="modal-title" id="exampleModalLabel">Resumen de su Compra</h5> -->
-                  <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                  <h5 class="modal-title" id="staticBackdropLabel">Resumen de su Compra</h5>
                   <button id="closeButtonMasterCard" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <!-- acá inyecto lo dinámico con JS -->
                   <p id="masterCard"></p>
-                  <p id="containerTimerMasterCard"></p>
+                  <p id="containerTimerMasterCard" class="mt-5"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="cancelarMaster" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                   <button id="pagarMaster" type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
                 </div>
               </div>
@@ -254,19 +253,20 @@
           </div>
 
           <!-- Modal Tarjeta VISA-->
-          <div class="modal fade" id="exampleModalVisa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="staticBackdropVisa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Resumen de su Compra</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="staticBackdropLabel">Resumen de su Compra</h5>
+                  <button id="closeButtonVisa" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <!-- acá inyecto lo dinámico con JS -->
                   <p id="visa"></p>
+                  <p id="containerTimerVisa" class="mt-5"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="cancelarVisa" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                   <button id="pagarVisa" type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
                 </div>
               </div>
@@ -274,19 +274,20 @@
           </div>
 
           <!-- Modal Paypal-->
-          <div class="modal fade" id="exampleModalPayPal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="staticBackdropPayPal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Resumen de su Compra</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="staticBackdropLabel">Resumen de su Compra</h5>
+                  <button id="closeButtonPayPal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <!-- acá inyecto lo dinámico con JS -->
                   <p id="payPal"></p>
+                  <p id="containerTimerPayPal" class="mt-5"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="cancelarPayPal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                   <button id="pagarPayPal" type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
                 </div>
               </div>
