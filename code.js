@@ -231,7 +231,7 @@ renderizarPlanesYPushearElementosAlCarrito();
                 <td><input id="servicio-cantidad-${elemento.servicio.id}" style="width: 30px;" type="number" value=${elemento.cantidad} min="1" max="1000" step="1"></td>
                 <td>${elemento.servicio.precioNetoPlan}</td>
                 <td>${elemento.servicio.precioNetoPlan*elemento.cantidad}</td>
-                <td><button id="servicio-eliminar-${elemento.servicio.id}" type="button" class="btn btn-danger" ><i class="bi bi-trash"></i></button></td>
+                <td><button id="servicio-eliminar-${elemento.servicio.id}" style="width: 40px;" type="button" class="btn btn-danger" ><i class="bi bi-trash"></i></button></td>
            
 
 
