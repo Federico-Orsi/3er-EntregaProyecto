@@ -79,8 +79,6 @@ const vaciarConJs = () => {
 vaciarConJs();
 
 
-
-
 // Servicios agregados dinamicamente:
 
 let planesAplicandoForOf = document.getElementById("planesAplicandoForOf");
@@ -156,9 +154,6 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
         
         duration: 3000,
         
-        destination: "https://github.com/apvarun/toastify-js",
-        
-        
         avatar: "../img/shopping-cart-svgrepo-com(x).svg",
 
         gravity: `bottom`,
@@ -176,7 +171,7 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
         
         duration: 3000,
         
-        avatar: "../img/shopping-cart-svgrepo-com.svg",
+        avatar: "../img/shopping-cart-svgrepo-com-2.svg",
 
         gravity: `top`,
       
@@ -195,8 +190,6 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
     }
 
   });
-
-
 }
 
 renderizarPlanesYPushearElementosAlCarrito();
@@ -270,13 +263,11 @@ renderizarPlanesYPushearElementosAlCarrito();
  `  : modalFooter.innerHTML = `
  <th scope="row" colspan="5"> El Total de su Compra es: $${sumaCarro} </th>
  `;
-
+// Aqui envío el Carrito actualizado al Local Storage:
 localStorage.setItem("carrito", JSON.stringify(elementosCarrito));
 
 
 }
-
-
 
 
 // funcion para eliminar elementos del Carrito:

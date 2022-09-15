@@ -6,7 +6,7 @@ carritoRecuperado = localStorage.getItem("carrito") && JSON.parse(localStorage.g
 let sumaCarritoRecuperado = 0 ;
 
 for (const elemento of carritoRecuperado) {
-  
+// Aqui acumulo el Valor Total de la Compra para luego mostrarlo en el detalle de Pago de las Tarjetas:  
 sumaCarritoRecuperado+=elemento.cantidad*elemento.servicio.precioNetoPlan;  
 
 }
@@ -75,7 +75,7 @@ const expresiones = {
   let comentarioErrorZipCode = document.getElementById("comentarioErrorZipCode");
   let errorTerminosYCondiciones = document.getElementById("errorTerminosYCondiciones");
   
-  
+  //Validación de los Términos y Condiciones:
   termsAndConditions.onclick = () => {
    
   if (termsAndConditions.checked == false) {
