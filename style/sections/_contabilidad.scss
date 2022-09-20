@@ -104,7 +104,22 @@
 
 }
 
+.sectionRenderizada{
+    display: flex;
+    flex-direction: column;
+}
 
+.alignSelf{
+    align-self: center;
+}
+
+#contenedorDolarOficial{
+    flex-direction: column;
+}
+
+.modal-content{
+    width: 104%;
+}
 
 @media (min-width:768px){
 
@@ -172,8 +187,24 @@
             background-color: black;
             
         } 
-     
+    }
     
+    .sectionRenderizada{
+        display: flex;
+        flex-direction: row;
+        gap: 1%;
+    }
+
+    .alignSelf{
+        align-self:unset;
+    }
+        
+    #contenedorDolarOficial{
+        flex-direction: row;
+    }
+
+    .modal-content{
+        width: 100%;
     }
     
 
@@ -182,8 +213,6 @@
 
     
 
-    
-    
     .separador{
         margin-top: -13px;
         }
@@ -197,7 +226,7 @@
             padding-right: 15px;
         }
 
-            
+        
 
     @media (min-width:1024px){
 
@@ -227,8 +256,11 @@
             background-color: black;
             
         } 
-     
-    
+    }
+
+    #planesAplicandoForOf{
+        
+        gap: 1%;
     }
 
 }

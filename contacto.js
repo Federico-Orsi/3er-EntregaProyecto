@@ -206,20 +206,20 @@ inputZipCode.oninput = () => {
           <h3 class="h3Titulo">Formas de Pago</h3>
          <article class="d-flex justify-content-around mt-5">
           
-          <figure class="figure w-25">
-            <img src="../img/Visa_Inc._logoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Visa">
+          <figure id="figureVisa" class="figure w-25">
+            <img src="../img/Visa_Inc._logoSvg.svg" id="imgVisa" class="figure-img img-fluid rounded" alt="Visa">
                                                <!-- Boton Trigger Modal -->
             <figcaption class="figure-caption"><button id="triggerTimerVisa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropVisa">Ver cuotas</button></figcaption>
           </figure>
 
-          <figure class="figure">
-            <img src="../img/PayPalSvg.svg" class="figure-img img-fluid rounded" alt="PayPal">
+          <figure id="figurePayPal" class="figure">
+            <img src="../img/PayPalSvg.svg" id="imgPayPal" class="figure-img img-fluid rounded" alt="PayPal">
                                                <!-- Boton Trigger Modal -->
             <figcaption class="figure-caption"><button id="triggerTimerPayPal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropPayPal">Ver cuotas</button></figcaption>
           </figure>
      
-          <figure class="figure">
-            <img src="../img/MasterCard_LogoSvg.svg" class="figure-img img-fluid rounded w-50 h-50" alt="Master">
+          <figure id="figureMasterCard" class="figure">
+            <img src="../img/MasterCard_LogoSvg.svg" id="imgMasterCard" class="figure-img img-fluid rounded" alt="Master">
                                               <!-- Boton Trigger Modal -->
             <figcaption class="figure-caption"><button id="triggerTimerMasterCard" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver cuotas</button></figcaption>
           </figure>

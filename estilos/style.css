@@ -194,6 +194,23 @@ body {
   color: #fff;
 }
 
+.sectionRenderizada {
+  display: flex;
+  flex-direction: column;
+}
+
+.alignSelf {
+  align-self: center;
+}
+
+#contenedorDolarOficial {
+  flex-direction: column;
+}
+
+.modal-content {
+  width: 104%;
+}
+
 @media (min-width: 768px) {
   .serviciosContainer {
     display: flex;
@@ -244,6 +261,20 @@ body {
   .info:hover {
     background-color: black;
   }
+  .sectionRenderizada {
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+  }
+  .alignSelf {
+    align-self: unset;
+  }
+  #contenedorDolarOficial {
+    flex-direction: row;
+  }
+  .modal-content {
+    width: 100%;
+  }
 }
 .separador {
   margin-top: -13px;
@@ -282,6 +313,9 @@ body {
   .info:hover {
     background-color: black;
   }
+  #planesAplicandoForOf {
+    gap: 1%;
+  }
 }
 .containerContacto {
   display: flex;
@@ -302,6 +336,31 @@ body {
   text-align: center;
 }
 
+#figureMasterCard {
+  width: 33%;
+}
+
+#imgMasterCard {
+  height: 35%;
+}
+
+#figureVisa {
+  margin-top: 3%;
+}
+
+#imgVisa {
+  height: 27%;
+}
+
+#figurePayPal {
+  margin-left: 4%;
+}
+
+#imgPayPal {
+  height: 41%;
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .containerContacto {
     display: flex;
@@ -315,6 +374,9 @@ body {
     width: 520px;
     margin-left: 0;
     height: 520px;
+  }
+  #figureMasterCard {
+    margin-top: 1%;
   }
 }
 @media (min-width: 1024px) {

@@ -20,6 +20,35 @@
    text-align: center;
 }
 
+// Alineación Tarjetas de Credito:
+
+#figureMasterCard{
+    width: 33%;
+}
+
+#imgMasterCard{
+    height: 35%;
+}
+
+#figureVisa{
+  margin-top: 3%;
+}
+
+#imgVisa{
+    height: 27%;
+}
+
+#figurePayPal{
+    margin-left: 4%;
+  }
+
+  #imgPayPal{
+    height: 41%;
+    margin-bottom: 0;
+}
+  
+
+
 @media (min-width:768px){
 
     .containerContacto{
@@ -39,6 +68,11 @@
         height: 520px;
     }
     
+    #figureMasterCard{
+     margin-top: 1%;
+    }
+    
+
     }
 
 

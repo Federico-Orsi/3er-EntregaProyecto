@@ -91,9 +91,9 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
   for (const servicio of servicios) {
   
 
-    planesAplicandoForOf.className = "d-flex justify-content-evenly";
+    planesAplicandoForOf.className = "d-flex justify-content-evenly sectionRenderizada";
     planesAplicandoForOf.innerHTML += `
-    <div class="card mt-4 mb-4" style="width: 18rem;">
+    <div class="card mt-4 mb-4 alignSelf" style="width: 18rem;">
       <img src=${servicio.foto} class="card-img-top" alt="...">
       <div class="card-body text-center">
         <h5 class="card-title">${servicio.item}</h5>
@@ -113,9 +113,9 @@ const renderizarPlanesYPushearElementosAlCarrito = () => {
   for (const servicio of informes) {
   
 
-    informesAplicandoForOf.className = "d-flex justify-content-evenly";
+    informesAplicandoForOf.className = "d-flex justify-content-evenly sectionRenderizada";
     informesAplicandoForOf.innerHTML += `
-      <div class="card mt-4 mb-4" style="width: 18rem;">
+      <div class="card mt-4 mb-4 alignSelf" style="width: 18rem;">
       <img src=${servicio.foto} class="card-img-top" alt="...">
       <div class="card-body text-center">
         <h5 class="card-title">${servicio.item}</h5>
